@@ -19,23 +19,32 @@
     <main>
       <section>
         <div class="carousel">
-          <img src="http://via.placeholder.com/900x600" alt="">
+          <img src="http://via.placeholder.com/800x500" alt="">
         </div>
       </section>
+      <h3>Movies</h3>
       <section class="section-display">
-        <button type="button" name="Movies">Movies</button>
         <div ng-repeat="movie in ctrl.movies | limitTo : 6" class="featured">
-          {{movie.title}}
+          <div>
+            <img src="http://via.placeholder.com/200x200">
+            <h4>{{movie.title}}</h4>
+            <h5>This is where a description would go if we were to have one but we don't so this is what we have.. </h5>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FFC300" stroke="#FFC300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
         </div>
       </section>
+      <h4><a href="#">View More Movies...</a></h4>
+      <h3>Actors</h3>
       <section class="section-display">
-        <button type="button" name="Actors">Actors</button>
         <div ng-repeat="actor in ctrl.actors | limitTo : 6" class="featured">
           <!-- <img src="movie.img"> -->
-          {{actor.first_name}}
-          {{actor.last_name}}
+          <div>
+            <img src="http://via.placeholder.com/200x200">
+            <h4>{{actor.first_name}} {{actor.last_name}}</h4>
+          <div>
         </div>
       </section>
+      <h4><a href="#">View More Actors...</a></h4>
     </main>
     <div class="push"></div>
   </div>
