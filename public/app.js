@@ -20,6 +20,20 @@ app.controller('MainController', ['$http', function($http){
 
   this.getMovies();
 
+  this.getActors = () => {
+    $http({
+      url: this.url + '/actors',
+      method: 'GET'
+    }).then(response => {
+      this.actors = response.data
+      console.log(response.data);
+    }, error => {
+      console.log(error.message);
+    }).catch(err => console.log(err))
+  }
+
+  this.getActors();
+
   // info on book
   this.getBook = (book, num) => {
     this.book = book;
