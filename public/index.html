@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="MyMoviesApp">
+<head>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>My Movies App</title>
+</head>
+<body ng-controller="MainController as ctrl">
+  <div class="wrapper">
+    <header>
+      <nav>
+        <a href="#">My Movies App</a>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <div class="carousel">
+          <img src="http://via.placeholder.com/900x600" alt="">
+        </div>
+      </section>
+      <section class="section-display">
+        <button type="button" name="Movies">Movies</button>
+        <div class="featured">
+          <img src="http://via.placeholder.com/200x200" alt="">
+          <img src="http://via.placeholder.com/200x200" alt="">
+          <img src="http://via.placeholder.com/200x200" alt="">
+          <img src="http://via.placeholder.com/200x200" alt="">
+          <img src="http://via.placeholder.com/200x200" alt="">
+          <img src="http://via.placeholder.com/200x200" alt="">
+          <img src="http://via.placeholder.com/200x200" alt="">
+          <img src="http://via.placeholder.com/200x200" alt="">
+          <img src="http://via.placeholder.com/200x200" alt="">
+          <img src="http://via.placeholder.com/200x200" alt="">
+          <img src="http://via.placeholder.com/200x200" alt="">
+          <img src="http://via.placeholder.com/200x200" alt="">
+        </div>
+      </section>
+      <section class="section-display">
+        <button type="button" name="Actors">Actors</button>
+        <div ng-repeat="movie in ctrl.actors | limitTo : 6" class="featured">
+          <img src="movie.img">
+          <h5>{{movie.title}}</h5>
+          <h6>{{movie.year}}</h6>
+        </div>
+      </section>
+    </main>
+    <div class="push"></div>
+  </div>
+  <footer class="footer">...</footer>
+</body>
+</html>
