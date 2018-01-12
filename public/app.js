@@ -1,25 +1,24 @@
 const app = angular.module('MyMoviesApp', []);
 app.controller('MainController', ['$http', function($http){
-  this.whatevs = 'whatevs'
-  console.log(this.whatevs);
+  this.url= 'http://localhost:3000'
 
 // ==============
 // GET Route
 // ==============
 
-  this.getBooks = () => {
+  this.getMovies = () => {
     $http({
-      url: 'books/',
+      url: this.url + '/movies',
       method: 'GET'
     }).then(response => {
-      this.books = response.data
-      // console.table(this.books);
+      this.movies = response.data
+      console.log(response.data);
     }, error => {
       console.log(error.message);
     }).catch(err => console.log(err))
   }
 
-  this.getBooks();
+  this.getMovies();
 
   // info on book
   this.getBook = (book, num) => {
