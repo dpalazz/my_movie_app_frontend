@@ -16,5 +16,5 @@ app.use(express.static('public'));
 // ==============
 
 app.get('/movies', (req, res) => {
-  res.render("index.html");
+  res.sendfile('public/index.html');
 });
