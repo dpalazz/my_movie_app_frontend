@@ -24,5 +24,9 @@ app.get('/movies', (req, res) => {
 });
 
 app.get('/movies', (req, res) => {
+<<<<<<< HEAD
   res.sendfile("public/actors.html");
+=======
+  res.sendfile('public/index.html');
+>>>>>>> 7d4b2462fed866c483c99c13841ee9bfe3d77c8f
 });
