@@ -126,23 +126,29 @@ app.controller('MainController', ['$http', function($http){
 //     // console.table(this.book);
 //   }
 //
-// // ==============
-// // UPDATE Route
-// // ==============
-//   this.updateBook = () => {
-//     // console.log(this.book);
-//     $http({
-//       url: 'books/' + this.book._id,
-//       method: 'PUT',
-//       data: this.formData
-//     }).then(response => {
-//       this.book = this.formData;
-//       const updateByIndex = this.books.findIndex(book => book._id === response.data._id)
-//       this.books.splice(updateByIndex, 1, response.data)
-//       this.formData = {};
-//     }, error => {
-//       console.log(error.message);
-//     }).catch(err => console.log(err))
-//   }
+// ==============
+// UPDATE Route
+// ==============
+  this.updateBook = () => {
+    // console.log(this.book);
+    // $http({
+    //   url: '/activemovie',
+    //   method: GET,
+    // }).then(response => {this.activemovie = response})
+    // });
+    //
+    $http({
+      url: '/movies/' + this.activemovie,
+      method: 'PUT',
+      data: this.formData
+    }).then(response => {
+      this.book = this.formData;
+      const updateByIndex = this.books.findIndex(book => book._id === response.data._id)
+      this.books.splice(updateByIndex, 1, response.data)
+      this.formData = {};
+    }, error => {
+      console.log(error.message);
+    }).catch(err => console.log(err))
+  }
 //
 }]);
