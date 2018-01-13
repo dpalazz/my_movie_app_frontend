@@ -2,9 +2,10 @@ const app = angular.module('MyMoviesApp', []);
 app.controller('MainController', ['$http', function($http){
   this.url= 'http://localhost:3000'
   this.form = false;
-// ==============
-// GET Route
-// ==============
+
+// ========================
+// GET (and display) Route
+// ========================
 
   this.getMovies = () => {
     $http({
