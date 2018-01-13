@@ -17,12 +17,14 @@
       </nav>
     </header>
     <main>
-      <section>
+      <section class="top-section">
         <div class="carousel">
           <img src="http://via.placeholder.com/800x500" alt="">
         </div>
       </section>
-      <h3>Movies</h3>
+      <div class="headline-wrapper">
+        <h3>Movies</h3>
+      </div>
       <section class="section-display">
         <div ng-repeat="movie in ctrl.movies | limitTo : 6" class="featured">
           <div>
@@ -34,7 +36,9 @@
         </div>
       </section>
       <h4><a href="#">View More Movies...</a></h4>
-      <h3>Actors</h3>
+      <div class="headline-wrapper">
+        <h3>Actors</h3>
+      </div>
       <section class="section-display">
         <div ng-repeat="actor in ctrl.actors | limitTo : 6" class="featured">
           <!-- <img src="movie.img"> -->
