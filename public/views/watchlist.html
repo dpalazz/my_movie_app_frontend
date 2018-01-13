@@ -110,8 +110,6 @@
         
         </div>
     
-
-
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <br>
@@ -160,10 +158,8 @@
         <form ng-if='ctrl.user' ng-submit='ctrl.logout()'>
             <input type='submit' value='logout' />
         </form>
-        
-        
-        <button onclick="closeNav()">Return to Website</button>
 
+        <button onclick="closeNav()">Return to Website</button>
         </div>
     
         <!-- <h2>Animated Sidenav Example</h2> -->
@@ -171,6 +167,7 @@
         
     
         <script>
+
             function openNav() {
                 document.getElementById("mySidenav").style.width = "250px";
             }
@@ -183,6 +180,7 @@
             function closeNavLogin() {
                     document.getElementById("mySidenavLogin").style.width = "0";
                 }
+
         </script>
     
     </body>
