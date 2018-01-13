@@ -15,6 +15,14 @@ app.use(express.static('public'));
 // ROUTES
 // ==============
 
+app.get('/mymovieapp', (req, res) => {
+  res.sendfile("public/index.html");
+});
+
 app.get('/movies', (req, res) => {
-  res.render("index.html");
+  res.sendfile("public/movies.html");
+});
+
+app.get('/movies', (req, res) => {
+  res.sendfile("public/actors.html");
 });
