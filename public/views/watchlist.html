@@ -85,7 +85,6 @@
                 <a class="active">
                     <a href="#">HOME</a>
                 </a>
-              
                 <!-- if not logged in -->
                 <!-- <a ng-if='!ctrl.user'> -->
                     <a href="#" onclick="openNavLogin()">
@@ -112,24 +111,25 @@
         </div>
     
 
+
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <br>
-            <br>
+
             <h2 class="sideNavH2">Sign Up</h2>
             <form class="formWidth" ng-submit='ctrl.registerUser()'>
                 <div id="incorrectPassword"></div>
-                <label for="username">Username:</label>
+                <label for="username">Username: </label>
                 <input type="text" class="form-control" placeholder="username" ng-model="ctrl.newUserForm.username" />
             
             
                 <div class="form-group">
-                    <label for="pwd">Password:</label>
+                    <label for="pwd">Password: </label>
                     <input type="password" class="form-control" placeholder="password" ng-model="ctrl.newUserForm.password" />
                 </div>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox"> Remember me</label>
+                        <!-- <input type="checkbox"> Remember me</label> -->
                 </div>
                 <input onclick="closeNavLogin()" type="submit" />
             </form>
@@ -143,11 +143,11 @@
         <h2 class="sideNavH2">Login</h2>
         <form class="formWidth" ng-submit='ctrl.loginUser()'>
             <div class="form-group">
-                <label for="pwd">Username:</label>
+                <label for="pwd">Username: </label>
                 <input type="text" class="form-control" placeholder="username" ng-model="ctrl.loginForm.username" />
             </div>
             <div class="form-group">
-                <label for="pwd">Password:</label>
+                <label for="pwd">Password: </label>
                 <input type="password" class="form-control" placeholder="password" ng-model="ctrl.loginForm.password" />
             </div>
             <div class="checkbox">
@@ -174,11 +174,9 @@
             function openNav() {
                 document.getElementById("mySidenav").style.width = "250px";
             }
-
              function openNavLogin() {
                     document.getElementById("mySidenavLogin").style.width = "250px";
                 }
-
             function closeNav() {
                 document.getElementById("mySidenav").style.width = "0";
             }
