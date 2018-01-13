@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+    
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color:lightgray;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+    
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: black;
+            display: block;
+            transition: 0.3s;
+        }
+    
+        .sidenav a:hover {
+            color: lightgray;
+        }
+    
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        body {margin:0;}
+
+        .topnav {
+        overflow: hidden;
+        background-color: lightgray;
+        }
+
+        .topnav a {
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        }
+
+        .topnav a:hover {
+        background-color: gray;
+        color: black;
+        }
+
+        .topnav a.active {
+        background-color: #4CAF50;
+        color: white;
+        }
+    
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+    </style>
+    </head>
+    
+    <body>
+        <div class="topnav">
+                <a class="active">
+                    <a href="#">HOME</a>
+                </a>
+              
+                <!-- if not logged in -->
+                <!-- <a ng-if='!ctrl.user'> -->
+                    <a href="#" onclick="openNavLogin()">
+                        <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                <!-- </a> -->
+                <!-- <a ng-if='!ctrl.user'> -->
+                    <a href="#" onclick="openNav()">
+                        <span class="glyphicon glyphicon-user" ></span> Sign Up</a>
+                <!-- </a> -->
+                <!-- if logged in -->
+                <a ng-if='ctrl.user'>
+                    <a>Welcome, {{ ctrl.user.username }} !</a>
+                </a>
+            
+                <a ng-if='ctrl.user'>
+                    <a href="#" ng-click='ctrl.logout()'>
+                        <span class="glyphicon glyphicon-log-out"></span> Log Out</a>
+                </a>
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+        </div>
+        
+        <div style="padding-left:16px">
+        
+        </div>
+    
+        
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <br>
+            <br>
+            <h2 class="sideNavH2">Sign Up</h2>
+            <form class="formWidth" ng-submit='ctrl.registerUser()'>
+                <div id="incorrectPassword"></div>
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" placeholder="username" ng-model="ctrl.newUserForm.username" />
+            
+            
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" placeholder="password" ng-model="ctrl.newUserForm.password" />
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Remember me</label>
+                </div>
+                <input onclick="closeNavLogin()" type="submit" />
+            </form>
+
+        </div>
+
+        <div id="mySidenavLogin" class="sidenav">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNavLogin()">&times;</a>
+        <br>
+        <br>
+        <h2 class="sideNavH2">Login</h2>
+        <form class="formWidth" ng-submit='ctrl.loginUser()'>
+            <div class="form-group">
+                <label for="pwd">Username:</label>
+                <input type="text" class="form-control" placeholder="username" ng-model="ctrl.loginForm.username" />
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" placeholder="password" ng-model="ctrl.loginForm.password" />
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> Remember me</label>
+            </div>
+            <input type="submit" onclick="closeNav()" />
+        </form>
+        
+        <form ng-if='ctrl.user' ng-submit='ctrl.logout()'>
+            <input type='submit' value='logout' />
+        </form>
+        
+        
+        <button onclick="closeNav()">Return to Website</button>
+
+        </div>
+    
+        <!-- <h2>Animated Sidenav Example</h2> -->
+        <!-- <p>Click on the element below to open the side navigation menu.</p> -->
+        
+    
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+            }
+
+             function openNavLogin() {
+                    document.getElementById("mySidenavLogin").style.width = "250px";
+                }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+            function closeNavLogin() {
+                    document.getElementById("mySidenavLogin").style.width = "0";
+                }
+        </script>
+    
+    </body>
+</html>
