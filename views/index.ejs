@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyMoviesApp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+  <script type="text/javascript" src="/js/app.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>My Movies App</title>
+
+</head>
+
+<body ng-controller="MainController as ctrl">
+  <div class="topbackground">
+    <!-- sidenav -->
+    <div class="topnav">
+      <span class="threelines" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+      <a href="/movies">MOVIES</a>
+
+      <div class="right">
+        <a ng-if='ctrl.user'> Welcome!</a>
+
+        <!-- if not logged in -->
+        <!-- <a ng-if='!ctrl.user'> -->
+        <a href="#" onclick="openNavLogin()">
+          <span class="glyphicon glyphicon-log-in"></span> Login</a>
+          <!-- </a> -->
+          <!-- <a ng-if='!ctrl.user'> -->
+          <a href="#" onclick="openNav()">
+            <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+            <!-- </a> -->
+            <!-- if logged in -->
+
+            <a ng-if='ctrl.user' href="#" ng-click='ctrl.logout()'>
+              <span class="glyphicon glyphicon-log-out"></span> Log Out</a>
+            </a>
+
+            <a ng-if='ctrl.user' href="#topranked" ng-click='ctrl.logout()'>
+              <span class="glyphicon glyphicon-log-out"></span> Top Ranked Movies</a>
+            </a>
+
+            <a ng-if='ctrl.user' href="#ourfavorite" ng-click='ctrl.logout()'>
+              <span class="glyphicon glyphicon-log-out"></span> Our Favorite Movies</a>
+            </a>
+
+            <a ng-if='ctrl.user' href="#comingsoon" ng-click='ctrl.logout()'>
+              <span class="glyphicon glyphicon-log-out"></span> Coming Soon</a>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- expanding sidenav SIGNUP -->
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <br>
+
+          <div class="sideNavPadding">
+            <h2 class="sideNavH2">Sign Up</h2>
+
+            <form class="formWidth" ng-submit='ctrl.registerUser()'>
+              <div id="incorrectPassword"></div>
+              <label for="username">Username: </label>
+              <input type="text" class="form-control" placeholder="username" ng-model="ctrl.newUserForm.username" />
+
+              <div class="form-group">
+                <label for="pwd">Password: </label>
+                <input type="password" class="form-control" placeholder="password" ng-model="ctrl.newUserForm.password" />
+              </div>
+
+              <button class="moviesbutton" onclick="closeNavLogin()" type="submit">Sign Up</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- expanding sidenav LOGIN -->
+        <div id="mySidenavLogin" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNavLogin()">&times;</a>
+          <br>
+          <br>
+          <div class="sideNavPadding">
+            <h2 class="sideNavH2">Login</h2>
+            <form class="formWidth" ng-submit='ctrl.loginUser()'>
+              <div class="form-group">
+                <label for="pwd">Username: </label>
+                <input type="text" class="form-control" placeholder="username" ng-model="ctrl.loginForm.username" />
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password: </label>
+                <input type="password" class="form-control" placeholder="password" ng-model="ctrl.loginForm.password" />
+              </div>
+              <div class="checkbox">
+
+              </div>
+              <button class="moviesbutton" onclick="closeNav()" type="submit">Login</button>
+            </form>
+
+            <!-- <form ng-if='ctrl.user' ng-submit='ctrl.logout()'>
+            <input type='submit' value='logout' />
+          </form> -->
+
+
+        </div>
+      </div>
+    </div>
+    <div class="recommendations">
+      <a href="#topranked">
+        <div class="divh5">
+          <h5 class="filmh5">Top Ranked Movies</h5>
+          <div class="choices1">
+          </div>
+        </div>
+
+        <a href="#comingsoon">
+          <div class="divh5">
+            <h5 class="filmh5">Coming Soon</h5>
+            <div class="choices2">
+            </div>
+          </div>
+
+          <a href='#ourfavorite'>
+            <div class="divh5">
+              <h5 class="filmh5">Our Favorite Movies</h5>
+              <div class="choices3">
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- sections -->
+          <a name='topranked'></a>
+          <div class="topranked">
+            <h3 class="filmh3">Top Ranked Movies</h3>
+            <div class="moviestopranked">
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+
+            </div>
+          </div>
+
+          <a name='ourfavorite'></a>
+          <div class="ourfavorite">
+            <h3 class="filmh3">Our Favorite Movies</h3>
+            <div class="moviestopranked">
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+            </div>
+          </div>
+
+          <a name='comingsoon'></a>
+          <div class="comingsoon">
+            <h3 class="filmh3">Movies Coming Soon</h3>
+            <div class="moviestopranked">
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+
+              <div class="divmovies">
+                <div class="movie1">
+                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <div class="movieh5">Title</div>
+              </div>
+            </div>
+          </div>
+
+        </body>
+        </html>
