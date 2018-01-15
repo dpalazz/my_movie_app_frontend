@@ -152,3 +152,22 @@ app.controller('MainController', ['$http', function($http){
   }
 //
 }]);
+
+
+// ======================
+// ratings.ejs functions
+// ======================
+
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+function openNavLogin() {
+  document.getElementById("mySidenavLogin").style.width = "250px";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+function closeNavLogin() {
+  document.getElementById("mySidenavLogin").style.width = "0";
+}

@@ -95,7 +95,7 @@
 
   /* w3schools login buttons */
   /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form */
-  button {
+  .moviebutton {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -105,7 +105,7 @@
     width: 100%;
   }
 
-  button:hover {
+  .moviebutton:hover {
     opacity: 0.8;
   }
   .closebtn:hover {
@@ -168,7 +168,7 @@ font-size: 18px;
                 <input type="password" class="form-control" placeholder="password" ng-model="ctrl.newUserForm.password" />
               </div>
 
-              <button onclick="closeNavLogin()" type="submit">Sign Up</button>
+              <button class="moviebutton" onclick="closeNavLogin()" type="submit">Sign Up</button>
             </form>
           </div>
         </div>
@@ -191,7 +191,7 @@ font-size: 18px;
               <div class="checkbox">
 
               </div>
-              <button onclick="closeNav()" type="submit">Login</button>
+              <button class="moviebutton" onclick="closeNav()" type="submit">Login</button>
             </form>
 
             <!-- <form ng-if='ctrl.user' ng-submit='ctrl.logout()'>
