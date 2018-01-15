@@ -42,6 +42,18 @@
     background-repeat: no-repeat;
     height: 700px;
   }
+
+  .comingsoon1 {
+  background-color: rgba(217, 207, 193, .4);
+  /* height: 500px; */
+  text-align: center;
+}
+
+.ourfavorite1 {
+  background-color:rgba(227, 242, 253, .4);
+  /* height: 500px; */
+  text-align: center;
+}
    
 
   .titletext {
@@ -53,6 +65,23 @@
   }
   small {
     font-size: 16px;
+  }
+
+  .moviesfandango {
+     background-color:rgba(227, 242, 253, .4);
+      padding: 30px 30% 0 40%;
+      margin: 0 0;
+      text-align: center;
+      height: 250px;
+      font-size: 15px;
+  }
+
+  .findmorefandango {
+    /* padding: 10px 30% 0 30%; */
+      margin: 0 0 0 0 ;
+      text-align: center;
+      width: 300px;
+      font-size: 15px;
   }
 
 </style>
@@ -130,8 +159,6 @@
         <!-- expanding sidenav LOGIN -->
         <div id="mySidenavLogin" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNavLogin()">&times;</a>
-          <br>
-          <br>
           <div class="sideNavPadding">
             <h2 class="sideNavH2">Login</h2>
             <form class="formWidth" ng-submit='ctrl.loginUser()'>
@@ -165,6 +192,13 @@
           </div>
         </div>
 
+        <a href='#ourfavorite'>
+          <div class="divh5">
+            <h5 class="filmh5">Our Favorite Movies</h5>
+            <div class="choices3">
+            </div>
+          </div>
+
         <a href="#comingsoon">
           <div class="divh5">
             <h5 class="filmh5">Coming Soon</h5>
@@ -172,12 +206,7 @@
             </div>
           </div>
 
-          <a href='#ourfavorite'>
-            <div class="divh5">
-              <h5 class="filmh5">Our Favorite Movies</h5>
-              <div class="choices3">
-              </div>
-            </div>
+         
           </div>
 
 
@@ -265,7 +294,7 @@
           </div>
 
           <a name='ourfavorite'></a>
-          <div class="ourfavorite">
+          <div class="ourfavorite1">
             <h3 class="filmh3">Our Favorite Movies</h3>
             <div class="moviestopranked">
               <div class="divmovies">
@@ -343,7 +372,7 @@
           </div>
 
           <a name='comingsoon'></a>
-          <div class="comingsoon">
+          <div class="comingsoon1">
             <h3 class="filmh3">Movies Coming Soon</h3>
             <div class="moviestopranked">
               <div class="divmovies">
@@ -418,6 +447,16 @@
                 <div class="movieh5">Title</div>
               </div>
             </div>
+          </div>
+
+          <!-- https://www.fandango.com/freemoviecontent#fandAppBanners -->
+          <div class="moviesfandango">
+            <div class="findmorefandango">Find more information at fandango.com</div>
+               
+              <a href="http://www.fandango.com/Redirect.aspx?wss=link764x383" border="0">
+                <img src="https://images.fandango.com/r1.0.258/redesign/areas/staticpages/img/linktous/logos/764x383.gif" width="300" height="auto"
+                  border="0" alt="Find Theater Showtimes" />
+              </a>
           </div>
       <footer class="footerMovies">
         <div class="footerMoviesText">
