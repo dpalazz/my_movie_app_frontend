@@ -1,7 +1,6 @@
 body {
   margin: 0 auto;
   font-family: 'Oswald', sans-serif;
-  font-size: 20px;
 }
 
 .body-container {
@@ -118,7 +117,7 @@ h4 a {
 /*Sticky Footer*/
 /*================*/
 
-html, body {
+/*html, body {
   height: 100%;
   margin: 0;
 }
@@ -130,72 +129,82 @@ html, body {
 .footer,
 .push {
   height: 50px;
+}*/
+
+/* ====================== */
+/* Style */
+/* ====================== */
+
+.topbackground {
+  background-image: url(https://static.pexels.com/photos/109669/pexels-photo-109669.jpeg);
+  /* background-image: url(https://images.unsplash.com/photo-1485095329183-d0797cdc5676?auto=format&fit=crop&w=2100&q=80); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 450px;
+  text-align: center;
 }
 
+h1 {
+  color: white;
+  font-size: 55px;
+  margin: auto;
+  padding-top: 150px;
+}
 
-/* ====================== */
-/* style for ratings.ejs */
-/* ====================== */
+.add:hover {
+  opacity: .5;
+  cursor: pointer;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:#F8F8F8;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
 
- .topbackground {
-    background-image: url(https://static.pexels.com/photos/109669/pexels-photo-109669.jpeg);
-    /* background-image: url(https://images.unsplash.com/photo-1485095329183-d0797cdc5676?auto=format&fit=crop&w=2100&q=80); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 450px;
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
 
-  }
+.sidenav a:hover {
+  color: black;
+}
 
-  .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color:#F8F8F8;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
 
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: black;
-    display: block;
-    transition: 0.3s;
-  }
+body {
+  margin: 0;
+}
 
-  .sidenav a:hover {
-    color: black;
-  }
+a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 12px;
+}
 
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-  body {margin:0;}
-
-
-
-  a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 12px;
-  }
-
-  a:hover {
-
-    color: black;
-  }
+a:hover {
+  color: black;
+}
 
 
 
@@ -226,22 +235,23 @@ html, body {
 
   /* w3schools login buttons */
   /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form */
-  .moviesbutton {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
+.moviesbutton {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
 
-  .moviesbutton:hover {
-    opacity: 0.8;
-  }
-  .closebtn:hover {
-    color:white;
-  }
+.moviesbutton:hover {
+  opacity: 0.8;
+}
+
+.closebtn:hover {
+  color:white;
+}
 
   /* @media screen and (max-height: 450px) {
   .sidenav {
@@ -251,8 +261,6 @@ html, body {
 font-size: 18px;
 }
 } */
-
-
 
 .topnav {
   text-align: left;
@@ -266,8 +274,6 @@ font-size: 18px;
   background-color: #F8F8F8;
   overflow-x: hidden;
   transition: 0.5s;
-
-
 }
 
 .topnav a {
@@ -394,7 +400,6 @@ font-size: 18px;
   /* height: 800px; */
   text-align: center;
 }
-
 
 .filmh3 {
   padding-top: 100px;
