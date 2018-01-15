@@ -1,6 +1,7 @@
 body {
   margin: 0 auto;
   font-family: 'Oswald', sans-serif;
+  font-size: 20px;
 }
 
 .body-container {
@@ -400,4 +401,3 @@ font-size: 18px;
   padding-left: 160px;
   margin: 0 0;
 }
-
