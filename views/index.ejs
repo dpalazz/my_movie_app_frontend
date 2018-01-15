@@ -11,7 +11,23 @@
   <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <title>My Movies App</title>
+<style>
+  .footerMovies {
+   /* position:fixed; */
+   padding-left: 180px;
+   left:0px;
+   bottom:0px;
+   height:220px;
+   width:100%;
+   background:#999;
+   box-shadow: 5px 30px #999;
+  }
 
+  .footerMoviesText {
+    padding: 30px;
+  }
+  
+</style>
 </head>
 
 <body ng-controller="MainController as ctrl">
@@ -369,6 +385,12 @@
               </div>
             </div>
           </div>
+      <footer class="footerMovies">
+        <div class="footerMoviesText">
+          footer
 
+        </div>
+        
+      </footer>
         </body>
-        </html>
+        </html>;
