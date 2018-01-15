@@ -153,7 +153,6 @@ app.controller('MainController', ['$http', function($http){
 //
 }]);
 
-
 // ======================
 // ratings.ejs functions
 // ======================
