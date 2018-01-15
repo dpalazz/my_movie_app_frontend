@@ -10,6 +10,12 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+
+  <!-- animations -->
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+  <!-- end of animations -->
+
   <title>My Movies App</title>
 <style>
 
@@ -84,17 +90,23 @@
       font-size: 15px;
   }
 
+  .brandstatement {
+    height: 40px;
+    font-size: 16px;
+  }
+
 </style>
 </head>
 
 <body ng-controller="MainController as ctrl">
   <div class="topbackground1">
-    <div class="titletext">
-        L'AVENTURE CINEMA
-        <br>
-        <small>employee recommendations - we are passionate about movies</small>
-    </div>
-  
+    <div data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500" class="titletext">
+      <div> L'AVENTURE CINEMA </div>
+
+      <div class="brandstatement">
+       employee recommendations - we are passionate about movies
+      </div>
+  </div>
     <!-- sidenav -->
     <div class="topnav">
       <span class="threelines" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
@@ -214,7 +226,7 @@
           <!-- sections -->
           <a name='topranked'></a>
           <div class="topranked">
-            <h3 class="filmh3">Top Ranked Movies</h3>
+            <h3 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" class="filmh3">Top Ranked Movies</h3>
             <div class="moviestopranked">
 
               <div class="divmovies">
@@ -295,7 +307,7 @@
 
           <a name='ourfavorite'></a>
           <div class="ourfavorite1">
-            <h3 class="filmh3">Our Favorite Movies</h3>
+            <h3 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" class="filmh3">Our Favorite Movies</h3>
             <div class="moviestopranked">
               <div class="divmovies">
                 <div class="movie1">
@@ -373,7 +385,7 @@
 
           <a name='comingsoon'></a>
           <div class="comingsoon1">
-            <h3 class="filmh3">Movies Coming Soon</h3>
+            <h3 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" class="filmh3">Movies Coming Soon</h3>
             <div class="moviestopranked">
               <div class="divmovies">
                 <div class="movie1">
@@ -473,5 +485,10 @@
         </div>
         
       </footer>
+ 
+        <script>
+          AOS.init();
+        </script>
+     
         </body>
         </html>;
