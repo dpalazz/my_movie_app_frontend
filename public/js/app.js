@@ -3,8 +3,12 @@ const app = angular.module('MyMoviesApp', []);
 app.controller('MainController', ['$http', function($http){
   this.url= 'http://localhost:3000'
   this.addForm = false;
+  this.editForm = false;
   this.addMovie = () => {
     this.addForm = true;
+  }
+  this.editMovie = () => {
+    this.editForm = true;
   }
 
   // ========================
@@ -28,8 +32,9 @@ app.controller('MainController', ['$http', function($http){
   // CREATE Route
   // ==============
 
-  this.processForm = () => {
-    this.createForm = {}
+  this.createForm = {}
+
+  this.processCreateForm = () => {
 
     $http({
       url: this.url + '/movies',
@@ -41,14 +46,13 @@ app.controller('MainController', ['$http', function($http){
     }).catch(err => console.log('Catch', err))
   }
 
-  // // ==============
-  // // DELETE Route
-  // // ==============
+  // ==============
+  // DELETE Route
+  // ==============
 
-  this.deleteMovie = (movie_id) => {
-    // console.log(id);
+  this.deleteMovie = (id) => {
     $http({
-      url: this.url + '/movies/' + movie_id,
+      url: this.url + '/movies/' + id,
       method: 'DELETE'
     }).then(response => {
       const removeMovie = this.movies.findIndex(movie => movie._id === id);
@@ -61,29 +65,19 @@ app.controller('MainController', ['$http', function($http){
   // ==============
   // UPDATE Route
   // ==============
-  // this.updateBook = () => {
-  //   // console.log(this.book);
-  //   // $http({
-  //   //   url: '/activemovie',
-  //   //   method: GET,
-  //   // }).then(response => {this.activemovie = response})
-  //   // });
-  //   //
-  //   $http({
-  //     url: '/movies/' + this.activemovie,
-  //     method: 'PUT',
-  //     data: this.formData
-  //   }).then(response => {
-  //     this.book = this.formData;
-  //     const updateByIndex = this.books.findIndex(book => book._id === response.data._id)
-  //     this.books.splice(updateByIndex, 1, response.data)
-  //     this.formData = {};
-  //   }, error => {
-  //     console.log(error.message);
-  //   }).catch(err => console.log(err))
-  // }
-
-  //
+  this.processEditForm = (id) => {
+    $http({
+      url: this.url + '/movies/' + id,
+      method: 'PUT',
+      data: this.formData
+    }).then(response => {
+      const updateByIndex = this.movies.findIndex(movie => movie._id === id)
+      this.movies.splice(updateByIndex, 1, response.data)
+      this.formData = {};
+    }, error => {
+      console.log(error.message);
+    }).catch(err => console.log(err))
+  }
 }]);
 
 // ======================
