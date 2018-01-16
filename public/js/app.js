@@ -3,12 +3,9 @@ const app = angular.module('MyMoviesApp', []);
 app.controller('MainController', ['$http', function($http){
   this.url= 'http://localhost:3000'
   this.addForm = false;
-  this.form = false;
+  this.editModal = false;
   this.addMovie = () => {
     this.addForm = !this.addForm;
-  }
-  this.editMovie = () => {
-    this.editForm = !this.editForm
   }
 
   // ========================
@@ -60,6 +57,7 @@ app.controller('MainController', ['$http', function($http){
       const updateByIndex = this.movies.findIndex(movie => movie._id === movie.id)
       this.movies.splice(updateByIndex, 1, response.data)
       this.createForm = {};
+      this.editModal = false;
     }, error => {
       console.log(error.message);
     }).catch(err => console.log(err))
