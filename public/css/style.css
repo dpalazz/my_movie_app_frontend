@@ -151,6 +151,12 @@ h1 {
   padding-top: 150px;
 }
 
+.add:hover {
+  opacity: .5;
+  color: grey;
+  cursor: pointer;
+}
+
 .sidenav {
   height: 100%;
   width: 0;

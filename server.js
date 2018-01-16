@@ -21,7 +21,6 @@ app.use(express.static('public'));
 // CONTROLLERS
 // ==============
 const moviesController = require('./controllers/movies.js')
-const editController = require('./controllers/edit.js')
 const sessionsController = require('./controllers/sessions.js')
 
 // ==============
@@ -30,7 +29,6 @@ const sessionsController = require('./controllers/sessions.js')
 
 // app.use('/session', sessionsController);
 app.use('/movies', moviesController);
-app.use('/edit', editController);
 
 // ==============
 // ROUTES
