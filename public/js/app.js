@@ -65,23 +65,24 @@ app.controller('MainController', ['$http', function($http){
   // ==============
   // UPDATE Route
   // ==============
-  this.processEditForm = (id) => {
-    $http({
-      url: this.url + '/movies/' + id,
-      method: 'PUT',
-      data: this.formData
-    }).then(response => {
-      const updateByIndex = this.movies.findIndex(movie => movie._id === id)
-      this.movies.splice(updateByIndex, 1, response.data)
-      this.formData = {};
-    }, error => {
-      console.log(error.message);
-    }).catch(err => console.log(err))
+  this.processEditForm = (movie) => {
+    console.log(movie)
+    // $http({
+    //   url: this.url + '/movies/' + id,
+    //   method: 'PUT',
+    //   data: this.formData
+    // }).then(response => {
+    //   const updateByIndex = this.movies.findIndex(movie => movie._id === id)
+    //   this.movies.splice(updateByIndex, 1, response.data)
+    //   this.formData = {};
+    // }, error => {
+    //   console.log(error.message);
+    // }).catch(err => console.log(err))
   }
 }]);
 
 // ======================
-// ratings.ejs functions
+// index.ejs functions
 // ======================
 
 
