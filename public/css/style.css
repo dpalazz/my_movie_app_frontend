@@ -1,11 +1,8 @@
 body {
-  margin: 0 auto;
   font-family: 'Oswald', sans-serif;
+  margin: 0;
 }
 
-/* ====================== */
-/* Style */
-/* ====================== */
 .contain-in-theatres {
   display: flex;
   flex-direction: row;
@@ -14,7 +11,7 @@ body {
 }
 
 .in-theatre {
-  max-width: 30%;
+  max-width: 20%;
   margin: 30px 80px;
 }
 
@@ -69,10 +66,6 @@ h2 {
   margin-left: 50px;
 }
 
-body {
-  margin: 0;
-}
-
 a {
   float: left;
   color: black;
@@ -91,13 +84,6 @@ a.active {
   color: white;
 }
 
-/* .right {
-display: flex;
-flex-direction: row;
-justify-content: flex-end;
-padding-right: 20px;
-} */
-
 input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
@@ -111,8 +97,7 @@ input[type=text], input[type=password] {
   padding: 0 15px;
 }
 
-/* w3schools login buttons */
-/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form */
+ /*w3schools login buttons https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form */
 
 .moviesbutton {
   background-color: #4CAF50;
@@ -131,15 +116,6 @@ input[type=text], input[type=password] {
 .closebtn:hover {
   color:white;
 }
-
-/* @media screen and (max-height: 450px) {
-.sidenav {
-padding-top: 15px;
-}
-.sidenav a {
-font-size: 18px;
-}
-} */
 
 .topnav {
   text-align: left;
@@ -239,7 +215,7 @@ font-size: 18px;
 }
 
 .movieh5 {
- margin-top: 0;
+  margin-top: 0;
 }
 
 .movieimg {
@@ -259,18 +235,6 @@ font-size: 18px;
   margin-top:5px;
   font-size: 16px;
 }
-/*
-.comingsoon {
-  background-color: rgba(217, 207, 193, .4);
-  height: 500px;
-  text-align: center;
-}*/
-
-/*.ourfavorite {
-  background-color:rgba(227, 242, 253, .4);
-  height: 500px;
-  text-align: center;
-}*/
 
 .topranked {
   background-color: rgba(217, 207, 193, .4);
@@ -284,10 +248,6 @@ font-size: 18px;
   margin: 0 0;
   font-size: 20px;
 }
-
-/*================*/
-/*Sticky Footer*/
-/*================*/
 
 html, body {
   height: 100%;
@@ -303,17 +263,14 @@ html, body {
   height: 50px;
 }
 
-/*from index page*/
 .footerMovies {
- /* position:fixed; */
- /* padding-left: 180px; */
- left:0px;
- bottom:0px;
- height:220px;
- width:100%;
- background-color: rgba(217, 207, 193, .4);
- box-shadow: 5px 65px rgba(217, 207, 193, .4);
- text-align: left;
+  left:0px;
+  bottom:0px;
+  height:220px;
+  width:100%;
+  background-color: rgba(217, 207, 193, .4);
+  box-shadow: 5px 65px rgba(217, 207, 193, .4);
+  text-align: left;
 }
 
 .footerMoviesText {
@@ -326,29 +283,27 @@ html, body {
   justify-content: center;
   padding-left: 100px;
   display: flex;
-flex-direction: row;
+  flex-direction: row;
 }
 
 .topbackground1 {
-     background-image: url(https://static.pexels.com/photos/109669/pexels-photo-109669.jpeg);
-  /* background-image: url(https://images.unsplash.com/photo-1485095329183-d0797cdc5676?auto=format&fit=crop&w=2100&q=80); */
+  background-image: url(https://static.pexels.com/photos/109669/pexels-photo-109669.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 600px;
 }
 
 .comingsoon1 {
-background-color: rgba(217, 207, 193, .4);
-/* height: 500px; */
-text-align: center;
+  background-color: rgba(217, 207, 193, .4);
+  /* height: 500px; */
+  text-align: center;
 }
 
 .ourfavorite1 {
-background-color:rgba(227, 242, 253, .4);
-/* height: 500px; */
-text-align: center;
+  background-color:rgba(227, 242, 253, .4);
+  /* height: 500px; */
+  text-align: center;
 }
-
 
 .titletext {
   text-align: center;
@@ -357,25 +312,25 @@ text-align: center;
   padding: 200px 0 0 100px;
   font-size: 50px;
 }
+
 small {
   font-size: 16px;
 }
 
 .moviesfandango {
-   background-color:rgba(227, 242, 253, .4);
-    padding: 30px 30% 0 40%;
-    margin: 0 0;
-    text-align: center;
-    height: 550px;
-    font-size: 15px;
+  background-color:rgba(227, 242, 253, .4);
+  padding: 30px 30% 0 40%;
+  margin: 0 0;
+  text-align: center;
+  height: 550px;
+  font-size: 15px;
 }
 
 .findmorefandango {
-  /* padding: 10px 30% 0 30%; */
-    margin: 0 0 0 0 ;
-    text-align: center;
-    width: 300px;
-    font-size: 15px;
+  margin: 0 0 0 0 ;
+  text-align: center;
+  width: 300px;
+  font-size: 15px;
 }
 
 .brandstatement {
@@ -396,4 +351,40 @@ small {
   width: 70%;
   height: 70%;
   display: block;
+}
+
+.editModal {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dim {
+  background-color: rgba(0, 0, 0, .4);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 5000;
+  display: none;
+}
+
+.modal {
+  background-color: white;
+  box-shadow: 0px 2px 5px grey;
+  margin: auto;
+  color: #33332e;
+  box-shadow: 0px 2px 10px #33332e;
+  text-align: left;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  border-radius: 3px;
+  /*text-align: center;*/
+  width: 200px;
+  height: 425px;
 }
