@@ -3,134 +3,6 @@ body {
   font-family: 'Oswald', sans-serif;
 }
 
-.body-container {
-  display: flex;
-  flex: 1;
-  margin-top: 10px;
-}
-
-aside {
-  flex: 0 0 12em;
-  padding-right: 20px;
-  border-right: 1px solid #90A4AE;
-}
-
-ul {
-  list-style: none;
-  text-align: left;
-}
-
-button {
-  font-size: 20px;
-  background-color: #90A4AE;
-  color: white;
-  border: none;
-  border-radius: 2px;
-  margin-bottom: 5px;
-  width: 150px;
-  padding: 5px 15px;
-}
-
-button:hover {
-  opacity: .5;
-}
-
-nav {
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 20px;
-  text-align: center;
-  border-bottom: 1px solid #90A4AE;
-  padding: 10px;
-  color: #5D6D7E;
-}
-
-.carousel {
-  margin: auto;
-  text-align: center;
-  background-color: #90A4AE;
-  padding: 20px;
-}
-
-nav a {
-  text-decoration: none;
-  margin: 0px;
-  color: #5D6D7E;
-}
-
-main {
-  margin-left: 20px;
-}
-
-.headline-wrapper {
-  background-color: #DAF7A6;
-  margin-left: 0;
-  width: 200px;
-  text-align: right;
-}
-
-h3 {
-  color: #5d6d7e;
-  padding-right: 25px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 22px;
-  letter-spacing: 1px;
-}
-
-h4 a {
-  color: #5d6d7e;
-  margin-left: 55px;
-}
-
-.section-display {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.section-display h4 {
-  color: #5d6d7e;
-}
-
-.section-display h5 {
-  color: #aeb6bf;
-  margin: 0;
-}
-
-.featured {
-  margin-right: 10px;
-  max-width: 20%;
-  margin-left: 60px;
-}
-
-.featured h4 {
-  margin: 0px;
-  margin-bottom: 2px;
-}
-
-.featured img:hover {
-  opacity: .5;
-}
-
-/*================*/
-/*Sticky Footer*/
-/*================*/
-
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-.wrapper {
-  min-height: 100px;
-}
-
-.footer,
-.push {
-  height: 50px;
-}
-
 /* ====================== */
 /* Style */
 /* ====================== */
@@ -201,7 +73,7 @@ a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 a:hover {
@@ -235,6 +107,7 @@ input[type=text], input[type=password] {
 
 /* w3schools login buttons */
 /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form */
+
 .moviesbutton {
   background-color: #4CAF50;
   color: white;
@@ -384,6 +257,7 @@ font-size: 18px;
   width: 120px;
   padding-left: 60px;
   margin-top:5px;
+  font-size: 16px;
 }
 
 .comingsoon {
@@ -408,4 +282,23 @@ font-size: 18px;
   padding-top: 100px;
   padding-left: 160px;
   margin: 0 0;
+  font-size: 20px;
+}
+
+/*================*/
+/*Sticky Footer*/
+/*================*/
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100px;
+}
+
+.footer,
+.push {
+  height: 50px;
 }
