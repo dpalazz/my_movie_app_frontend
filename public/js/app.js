@@ -27,9 +27,9 @@ app.controller('MainController', ['$http', function($http){
   // ==============
   // CREATE Route
   // ==============
+  this.createForm = {}
 
   this.processForm = () => {
-    this.createForm = {}
 
     $http({
       url: this.url + '/movies',
@@ -45,10 +45,10 @@ app.controller('MainController', ['$http', function($http){
   // // DELETE Route
   // // ==============
 
-  this.deleteMovie = (movie_id) => {
-    // console.log(id);
+  this.deleteMovie = (id) => {
+    console.log(id);
     $http({
-      url: this.url + '/movies/' + movie_id,
+      url: this.url + '/movies/' + id,
       method: 'DELETE'
     }).then(response => {
       const removeMovie = this.movies.findIndex(movie => movie._id === id);
