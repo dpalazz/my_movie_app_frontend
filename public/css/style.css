@@ -6,15 +6,7 @@ body {
 /* ====================== */
 /* Style */
 /* ====================== */
-/*
-.topbackground {
-  background-image: url(https://static.pexels.com/photos/109669/pexels-photo-109669.jpeg);
-  /* background-image: url(https://images.unsplash.com/photo-1485095329183-d0797cdc5676?auto=format&fit=crop&w=2100&q=80); */
-  /*background-size: cover;
-  background-repeat: no-repeat;
-  height: 450px;
-  text-align: center;*/
-/*}*/
+
 
 h1 {
   color: white;
@@ -171,17 +163,12 @@ font-size: 18px;
   background-color: white;
 }
 
-/*.recommendations {
-  display: flex;
-  flex-direction: row;
-  padding: 50px 0 100px 180px;
-}*/
-
 .moviestopranked1 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 50px 0 100px 180px;
+  justify-content: center;
 }
 
 .choices1 {
@@ -228,8 +215,8 @@ font-size: 18px;
 }
 
 .movie1 {
-  width: 100px;
-  height: auto;
+  width: auto;
+  height: 100px;
   margin: 30px 30px 5px 30px;
   text-align: center;
   /* background-image: url(https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80); */
@@ -238,13 +225,12 @@ font-size: 18px;
 }
 
 .movieh5 {
-  width: 120px;
-  margin-left:20px;
+ margin-top: 0;
 }
 
 .movieimg {
-  width: 100px;
-  height: auto;
+  width: auto;
+  height: 100px;
   /* margin: 30px; */
   text-align: center;
 }
@@ -306,13 +292,13 @@ html, body {
 /*from index page*/
 .footerMovies {
  /* position:fixed; */
- padding-left: 180px;
+ /* padding-left: 180px; */
  left:0px;
  bottom:0px;
  height:220px;
  width:100%;
  background-color: rgba(217, 207, 193, .4);
- box-shadow: 5px 30px #999;
+ box-shadow: 5px 65px rgba(217, 207, 193, .4);
  text-align: left;
 }
 
@@ -381,4 +367,18 @@ small {
 .brandstatement {
   height: 40px;
   font-size: 16px;
+}
+
+.viewmore {
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  color: black;
+  padding: 0 30% 0 40%;
+  
+}
+
+.imgMoviesComingsoon {
+width: 70%;
+height: 70%;
 }
