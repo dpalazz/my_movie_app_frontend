@@ -3,7 +3,7 @@ const app = angular.module('MyMoviesApp', []);
 app.controller('MainController', ['$http', function($http){
   this.url= 'http://localhost:3000'
   this.addForm = false;
-  this.editForm = false;
+  this.form = false;
   this.addMovie = () => {
     this.addForm = !this.addForm;
   }

@@ -6,13 +6,27 @@ body {
 /* ====================== */
 /* Style */
 /* ====================== */
+.contain-in-theatres {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
 
+.in-theatre {
+  max-width: 30%;
+  margin: 30px 80px;
+}
 
 h1 {
   color: white;
   font-size: 55px;
-  margin: auto;
+  text-align: center;
   padding-top: 150px;
+}
+
+h2 {
+  padding-left: 20px;
 }
 
 .add:hover {
@@ -216,7 +230,7 @@ font-size: 18px;
 
 .movie1 {
   width: auto;
-  height: 100px;
+  height: 180px;
   margin: 30px 30px 5px 30px;
   text-align: center;
   /* background-image: url(https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80); */
@@ -371,14 +385,15 @@ small {
 
 .viewmore {
   background-color: white;
-  width: 100px;
+  width: 65px;
   height: 100px;
   color: black;
   padding: 0 30% 0 40%;
-  
+
 }
 
 .imgMoviesComingsoon {
-width: 70%;
-height: 70%;
+  width: 70%;
+  height: 70%;
+  display: block;
 }
