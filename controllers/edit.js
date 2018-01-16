@@ -15,12 +15,12 @@ router.use(express.static('public'));
 // ==============
 
 router.get('/', (req, res) => {
-  res.render("ratings.ejs");
+  res.render("edit.ejs");
 });
 
 router.get('/:id', (req, res) => {
   req.session.activeMovie = req.params.id;
-  res.render("ratings.ejs");
+  res.render("edit.ejs");
 });
 
 router.get('/activemovie', (req, res) => {

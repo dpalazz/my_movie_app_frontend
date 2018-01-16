@@ -6,6 +6,9 @@ app.controller('MainController', ['$http', function($http){
   this.addMovie = () => {
     this.addForm = true;
   }
+  this.editMovie = () => {
+    this.editForm = true;
+  }
 
   // ========================
   // GET Route
@@ -27,9 +30,10 @@ app.controller('MainController', ['$http', function($http){
   // ==============
   // CREATE Route
   // ==============
+
   this.createForm = {}
 
-  this.processForm = () => {
+  this.processCreateForm = () => {
 
     $http({
       url: this.url + '/movies',
@@ -41,12 +45,11 @@ app.controller('MainController', ['$http', function($http){
     }).catch(err => console.log('Catch', err))
   }
 
-  // // ==============
-  // // DELETE Route
-  // // ==============
+  // ==============
+  // DELETE Route
+  // ==============
 
   this.deleteMovie = (id) => {
-    console.log(id);
     $http({
       url: this.url + '/movies/' + id,
       method: 'DELETE'
@@ -61,29 +64,20 @@ app.controller('MainController', ['$http', function($http){
   // ==============
   // UPDATE Route
   // ==============
-  // this.updateBook = () => {
-  //   // console.log(this.book);
-  //   // $http({
-  //   //   url: '/activemovie',
-  //   //   method: GET,
-  //   // }).then(response => {this.activemovie = response})
-  //   // });
-  //   //
-  //   $http({
-  //     url: '/movies/' + this.activemovie,
-  //     method: 'PUT',
-  //     data: this.formData
-  //   }).then(response => {
-  //     this.book = this.formData;
-  //     const updateByIndex = this.books.findIndex(book => book._id === response.data._id)
-  //     this.books.splice(updateByIndex, 1, response.data)
-  //     this.formData = {};
-  //   }, error => {
-  //     console.log(error.message);
-  //   }).catch(err => console.log(err))
-  // }
 
-  //
+  this.processUpdateForm = (id) => {
+    $http({
+      url: this.url + '/movies/' + id,
+      method: 'PUT',
+      data: this.formData
+    }).then(response => {
+      const updateByIndex = this.movies.findIndex(movie => movie._id === id)
+      this.movies.splice(updateByIndex, 1, response.data)
+      this.formData = {};
+    }, error => {
+      console.log(error.message);
+    }).catch(err => console.log(err))
+  }
 }]);
 
 // ======================

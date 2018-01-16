@@ -11,22 +11,21 @@
 </head>
 <body ng-controller="MainController as ctrl">
   <header class="topbackground">
-    <h1>In Theatre Now</h1>
+    <h1>In Theaters Now</h1>
   </header>
   <main>
     <h2>Movies</h2>
     <div ng-repeat="movie in ctrl.movies">
-      <img src="{{movie.img_url}}" alt="">
+      <img src="{{movie.img_url}}">
       <h4>{{movie.title}}</h4>
       <h5>{{movie.year}}</h5>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FFC300" stroke="#FFC300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
       <h4 ng-click="ctrl.deleteMovie(movie.id)" class="add">Remove</h4>
-      <h4 ng-click="ctrl.editMovie()" class="add">Edit</h4>
+      <h4 class="add"><a href="/edit/{{movie.id}}">Edit</a></h4>
     </div>
   </main>
   <h2 ng-click="ctrl.addMovie()" class="add">Add New Movie</h2>
   <div ng-show="ctrl.addForm" class="ng-hide">
-    <form ng-submit="ctrl.processForm()">
+    <form ng-submit="ctrl.processCreateForm()">
       <input type="text" ng-model="ctrl.createForm.title" placeholder="Movie Title">
       <input type="text" ng-model="ctrl.createForm.img_url" placeholder="Image URL">
       <input type="text" ng-model="ctrl.createForm.year" placeholder="Year">
@@ -36,5 +35,6 @@
   </div>
 </aside>
 </div>
+<footer class="footer">...</footer>
 </body>
 </html>

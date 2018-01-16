@@ -117,7 +117,7 @@ h4 a {
 /*Sticky Footer*/
 /*================*/
 
-/*html, body {
+html, body {
   height: 100%;
   margin: 0;
 }
@@ -129,7 +129,7 @@ h4 a {
 .footer,
 .push {
   height: 50px;
-}*/
+}
 
 /* ====================== */
 /* Style */
@@ -151,10 +151,6 @@ h1 {
   padding-top: 150px;
 }
 
-.add:hover {
-  opacity: .5;
-  cursor: pointer;
-}
 .sidenav {
   height: 100%;
   width: 0;
@@ -206,35 +202,33 @@ a:hover {
   color: black;
 }
 
+a.active {
+  background-color: #4CAF50;
+  color: white;
+}
 
+/* .right {
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+padding-right: 20px;
+} */
 
-  a.active {
-    background-color: #4CAF50;
-    color: white;
-  }
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
 
-  /* .right {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding-right: 20px;
-  } */
+.sideNavPadding {
+  padding: 0 15px;
+}
 
-  input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-
-  .sideNavPadding {
-    padding: 0 15px;
-  }
-
-  /* w3schools login buttons */
-  /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form */
+/* w3schools login buttons */
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form */
 .moviesbutton {
   background-color: #4CAF50;
   color: white;
@@ -253,9 +247,9 @@ a:hover {
   color:white;
 }
 
-  /* @media screen and (max-height: 450px) {
-  .sidenav {
-  padding-top: 15px;
+/* @media screen and (max-height: 450px) {
+.sidenav {
+padding-top: 15px;
 }
 .sidenav a {
 font-size: 18px;
@@ -281,15 +275,18 @@ font-size: 18px;
   text-align: left;
   width: 100px;
 }
+
 .topnav a:hover {
   display: inline-block;
   text-align: left;
   width: 100px;
   background-color: gray;
 }
+
 .threelines {
   padding: 14px;
 }
+
 .threelines:hover {
   padding:0 60px 0 14px;
   background-color: white;
@@ -299,7 +296,6 @@ font-size: 18px;
   display: flex;
   flex-direction: row;
   padding: 50px 0 100px 180px;
-
 }
 
 .moviestopranked {
@@ -322,6 +318,7 @@ font-size: 18px;
   /* border-radius: 400px; */
   box-shadow: 5px 10px 10px #888888;
 }
+
 .choices2 {
   width: 100px;
   height: 100px;
@@ -336,6 +333,7 @@ font-size: 18px;
   /* border-radius: 400px; */
   box-shadow: 5px 10px 10px #888888;
 }
+
 .choices3 {
   width: 100px;
   height: 100px;
@@ -363,7 +361,6 @@ font-size: 18px;
 .movieh5 {
   width: 120px;
   margin-left:20px;
-
 }
 
 .movieimg {
@@ -375,8 +372,8 @@ font-size: 18px;
 
 .divh5 {
   text-align: center;
-
 }
+
 .filmh5 {
   width: 120px;
   padding-left: 60px;
@@ -389,7 +386,7 @@ font-size: 18px;
   text-align: center;
 }
 
-.ourfavorite{
+.ourfavorite {
   background-color:rgba(227, 242, 253, .4);
   height: 500px;
   text-align: center;
