@@ -5,10 +5,10 @@ app.controller('MainController', ['$http', function($http){
   this.addForm = false;
   this.editForm = false;
   this.addMovie = () => {
-    this.addForm = true;
+    this.addForm = !this.addForm;
   }
   this.editMovie = () => {
-    this.editForm = true;
+    this.editForm = !this.editForm
   }
 
   // ========================
@@ -35,7 +35,6 @@ app.controller('MainController', ['$http', function($http){
   this.createForm = {}
 
   this.processCreateForm = () => {
-
     $http({
       url: this.url + '/movies',
       method: 'POST',
@@ -44,6 +43,26 @@ app.controller('MainController', ['$http', function($http){
       this.movies.push(response.data);
       this.createForm = {};
     }).catch(err => console.log('Catch', err))
+  }
+
+  // ==============
+  // UPDATE Route
+  // ==============
+
+  this.createForm = {}
+
+  this.processEditForm = (movie) => {
+    $http({
+      url: this.url + '/movies/' + movie.id,
+      method: 'PUT',
+      data: this.createForm
+    }).then(response => {
+      const updateByIndex = this.movies.findIndex(movie => movie._id === movie.id)
+      this.movies.splice(updateByIndex, 1, response.data)
+      this.createForm = {};
+    }, error => {
+      console.log(error.message);
+    }).catch(err => console.log(err))
   }
 
   // ==============
@@ -62,28 +81,11 @@ app.controller('MainController', ['$http', function($http){
     }).catch(err => console.log(err))
   }
 
-  // ==============
-  // UPDATE Route
-  // ==============
-  this.processEditForm = (id) => {
-    $http({
-      url: this.url + '/movies/' + id,
-      method: 'PUT',
-      data: this.formData
-    }).then(response => {
-      const updateByIndex = this.movies.findIndex(movie => movie._id === id)
-      this.movies.splice(updateByIndex, 1, response.data)
-      this.formData = {};
-    }, error => {
-      console.log(error.message);
-    }).catch(err => console.log(err))
-  }
 }]);
 
 // ======================
 // ratings.ejs functions
 // ======================
-
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";

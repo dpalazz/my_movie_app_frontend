@@ -21,16 +21,16 @@
         <h4>{{movie.title}}</h4>
         <h5>{{movie.year}}</h5>
         <h4 ng-click="ctrl.deleteMovie(movie.id)" class="add">Remove</h4>
-        <h4 ng-click="ctrl.editMovie()" class="add">Edit</h4>
-        <div ng-show="ctrl.editForm" class="ng-hide">
-          <form ng-submit="ctrl.processEditForm(movie.id)">
+        <h4 ng-click="ctrl.editMovie(movie)" class="add">Edit</h4>
+
+          <form ng-submit="ctrl.processEditForm(movie)">
             <input type="text" ng-model="ctrl.createForm.title" placeholder="{{movie.title}}">
             <input type="text" ng-model="ctrl.createForm.img_url" placeholder="{{movie.img_url}}">
             <input type="text" ng-model="ctrl.createForm.year" placeholder="{{movie.year}}">
             <input type="text" ng-model="ctrl.createForm.runtime" placeholder="{{movie.runtime}}">
             <input type="submit">
           </form>
-        </div>
+
       </div>
     </div>
     <h2 ng-click="ctrl.addMovie()" class="add">Add New Movie</h2>
