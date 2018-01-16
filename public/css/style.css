@@ -1,7 +1,6 @@
 body {
   margin: 0 auto;
   font-family: 'Oswald', sans-serif;
-  font-size: 20px;
 }
 
 .body-container {
@@ -132,127 +131,130 @@ html, body {
   height: 50px;
 }
 
-
 /* ====================== */
-/* style for ratings.ejs */
+/* Style */
 /* ====================== */
 
- .topbackground {
-    background-image: url(https://static.pexels.com/photos/109669/pexels-photo-109669.jpeg);
-    /* background-image: url(https://images.unsplash.com/photo-1485095329183-d0797cdc5676?auto=format&fit=crop&w=2100&q=80); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 450px;
+.topbackground {
+  background-image: url(https://static.pexels.com/photos/109669/pexels-photo-109669.jpeg);
+  /* background-image: url(https://images.unsplash.com/photo-1485095329183-d0797cdc5676?auto=format&fit=crop&w=2100&q=80); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 450px;
+  text-align: center;
+}
 
-  }
+h1 {
+  color: white;
+  font-size: 55px;
+  margin: auto;
+  padding-top: 150px;
+}
 
-  .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color:#F8F8F8;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:#F8F8F8;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
 
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: black;
-    display: block;
-    transition: 0.3s;
-  }
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
 
-  .sidenav a:hover {
-    color: black;
-  }
+.sidenav a:hover {
+  color: black;
+}
 
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-  body {margin:0;}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
 
+body {
+  margin: 0;
+}
 
+a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 12px;
+}
 
-  a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 12px;
-  }
+a:hover {
+  color: black;
+}
 
-  a:hover {
+a.active {
+  background-color: #4CAF50;
+  color: white;
+}
 
-    color: black;
-  }
+/* .right {
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+padding-right: 20px;
+} */
 
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
 
+.sideNavPadding {
+  padding: 0 15px;
+}
 
-  a.active {
-    background-color: #4CAF50;
-    color: white;
-  }
+/* w3schools login buttons */
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form */
+.moviesbutton {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
 
-  /* .right {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding-right: 20px;
-  } */
+.moviesbutton:hover {
+  opacity: 0.8;
+}
 
-  input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
+.closebtn:hover {
+  color:white;
+}
 
-  .sideNavPadding {
-    padding: 0 15px;
-  }
-
-  /* w3schools login buttons */
-  /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form */
-  .moviesbutton {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
-
-  .moviesbutton:hover {
-    opacity: 0.8;
-  }
-  .closebtn:hover {
-    color:white;
-  }
-
-  /* @media screen and (max-height: 450px) {
-  .sidenav {
-  padding-top: 15px;
+/* @media screen and (max-height: 450px) {
+.sidenav {
+padding-top: 15px;
 }
 .sidenav a {
 font-size: 18px;
 }
 } */
-
-
 
 .topnav {
   text-align: left;
@@ -266,8 +268,6 @@ font-size: 18px;
   background-color: #F8F8F8;
   overflow-x: hidden;
   transition: 0.5s;
-
-
 }
 
 .topnav a {
@@ -275,15 +275,18 @@ font-size: 18px;
   text-align: left;
   width: 100px;
 }
+
 .topnav a:hover {
   display: inline-block;
   text-align: left;
   width: 100px;
   background-color: gray;
 }
+
 .threelines {
   padding: 14px;
 }
+
 .threelines:hover {
   padding:0 60px 0 14px;
   background-color: white;
@@ -293,7 +296,6 @@ font-size: 18px;
   display: flex;
   flex-direction: row;
   padding: 50px 0 100px 180px;
-
 }
 
 .moviestopranked {
@@ -316,6 +318,7 @@ font-size: 18px;
   /* border-radius: 400px; */
   box-shadow: 5px 10px 10px #888888;
 }
+
 .choices2 {
   width: 100px;
   height: 100px;
@@ -330,6 +333,7 @@ font-size: 18px;
   /* border-radius: 400px; */
   box-shadow: 5px 10px 10px #888888;
 }
+
 .choices3 {
   width: 100px;
   height: 100px;
@@ -357,7 +361,6 @@ font-size: 18px;
 .movieh5 {
   width: 120px;
   margin-left:20px;
-
 }
 
 .movieimg {
@@ -369,8 +372,8 @@ font-size: 18px;
 
 .divh5 {
   text-align: center;
-
 }
+
 .filmh5 {
   width: 120px;
   padding-left: 60px;
@@ -383,7 +386,7 @@ font-size: 18px;
   text-align: center;
 }
 
-.ourfavorite{
+.ourfavorite {
   background-color:rgba(227, 242, 253, .4);
   height: 500px;
   text-align: center;
@@ -394,7 +397,6 @@ font-size: 18px;
   /* height: 800px; */
   text-align: center;
 }
-
 
 .filmh3 {
   padding-top: 100px;
