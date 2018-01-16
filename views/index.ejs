@@ -10,12 +10,125 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-  <title>My Movies App</title>
 
+  <!-- google font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- animations -->
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+  <!-- end of animations -->
+
+  <title>My Movies App</title>
+<style>
+
+  .footerMovies {
+   /* position:fixed; */
+   /* padding-left: 180px; */
+   left:0px;
+   bottom:0px;
+   height:220px;
+   width:100%;
+   background:#999;
+   box-shadow: 5px 30px #999;
+  }
+
+  .footerMoviesText {
+    padding: 30px 30% 0 20%;
+    font-size: 12px;
+  }
+
+  .footercenter {
+padding: 10px 0 0 0;
+  }
+
+  .contactinfo {
+    margin: 0 0;
+  }
+
+
+
+  .recommendations1 {
+    justify-content: center;
+    padding-left: 100px;
+    display: flex;
+  flex-direction: row;
+  }
+
+  .topbackground1 {
+       background-image: url(https://static.pexels.com/photos/109669/pexels-photo-109669.jpeg);
+    /* background-image: url(https://images.unsplash.com/photo-1485095329183-d0797cdc5676?auto=format&fit=crop&w=2100&q=80); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+  }
+
+  .comingsoon1 {
+  background-color: rgba(217, 207, 193, .4);
+  /* height: 500px; */
+  text-align: center;
+}
+
+.ourfavorite1 {
+  background-color:rgba(227, 242, 253, .4);
+  /* height: 500px; */
+  text-align: center;
+}
+
+
+  .titletext {
+    text-align: center;
+    color: white;
+    margin: 0 0;
+    padding: 200px 0 0 100px;
+    font-size: 50px;
+  }
+  small {
+    font-size: 16px;
+  }
+
+  .moviesfandango {
+     background-color:rgba(227, 242, 253, .4);
+      padding: 30px 30% 0 40%;
+      margin: 0 0;
+      text-align: center;
+      height: 550px;
+      font-size: 15px;
+  }
+
+  .findmorefandango {
+    /* padding: 10px 30% 0 30%; */
+      margin: 0 0 0 0 ;
+      text-align: center;
+      width: 300px;
+      font-size: 15px;
+  }
+
+  .brandstatement {
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .moviestopranked1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px 0 100px 180px;
+  }
+
+</style>
 </head>
 
 <body ng-controller="MainController as ctrl">
-  <div class="topbackground">
+  <div class="topbackground1">
+    <div data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500" class="titletext">
+      <div> L'AVENTURE CINEMA </div>
+
+      <div class="brandstatement">
+       employee recommendations - we are passionate about movies
+      </div>
+  </div>
     <!-- sidenav -->
     <div class="topnav">
       <span class="threelines" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
@@ -57,8 +170,6 @@
         <!-- expanding sidenav SIGNUP -->
         <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <br>
-
           <div class="sideNavPadding">
             <h2 class="sideNavH2">Sign Up</h2>
 
@@ -80,8 +191,6 @@
         <!-- expanding sidenav LOGIN -->
         <div id="mySidenavLogin" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNavLogin()">&times;</a>
-          <br>
-          <br>
           <div class="sideNavPadding">
             <h2 class="sideNavH2">Login</h2>
             <form class="formWidth" ng-submit='ctrl.loginUser()'>
@@ -107,13 +216,20 @@
         </div>
       </div>
     </div>
-    <div class="recommendations">
+    <div class="recommendations1">
       <a href="#topranked">
         <div class="divh5">
           <h5 class="filmh5">Top Ranked Movies</h5>
           <div class="choices1">
           </div>
         </div>
+
+        <a href='#ourfavorite'>
+          <div class="divh5">
+            <h5 class="filmh5">Our Favorite Movies</h5>
+            <div class="choices3">
+            </div>
+          </div>
 
         <a href="#comingsoon">
           <div class="divh5">
@@ -122,12 +238,7 @@
             </div>
           </div>
 
-          <a href='#ourfavorite'>
-            <div class="divh5">
-              <h5 class="filmh5">Our Favorite Movies</h5>
-              <div class="choices3">
-              </div>
-            </div>
+
           </div>
 
 
@@ -135,8 +246,8 @@
           <!-- sections -->
           <a name='topranked'></a>
           <div class="topranked">
-            <h3 class="filmh3">Top Ranked Movies</h3>
-            <div class="moviestopranked">
+            <h3 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" class="filmh3">Top Ranked Movies</h3>
+            <div class="moviestopranked1">
 
               <div class="divmovies">
                 <div class="movie1">
@@ -215,9 +326,9 @@
           </div>
 
           <a name='ourfavorite'></a>
-          <div class="ourfavorite">
-            <h3 class="filmh3">Our Favorite Movies</h3>
-            <div class="moviestopranked">
+          <div class="ourfavorite1">
+            <h3 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" class="filmh3">Our Favorite Movies</h3>
+            <div class="moviestopranked1">
               <div class="divmovies">
                 <div class="movie1">
                   <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
@@ -293,9 +404,9 @@
           </div>
 
           <a name='comingsoon'></a>
-          <div class="comingsoon">
-            <h3 class="filmh3">Movies Coming Soon</h3>
-            <div class="moviestopranked">
+          <div class="comingsoon1">
+            <h3 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" class="filmh3">Movies Coming Soon</h3>
+            <div class="moviestopranked1">
               <div class="divmovies">
                 <div class="movie1">
                   <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
@@ -311,34 +422,6 @@
                 <div class="movieh5">Title</div>
               </div>
 
-
-              <div class="divmovies">
-                <div class="movie1">
-                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
-                </div>
-                <div class="movieh5">Title</div>
-              </div>
-
-              <div class="divmovies">
-                <div class="movie1">
-                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
-                </div>
-                <div class="movieh5">Title</div>
-              </div>
-
-              <div class="divmovies">
-                <div class="movie1">
-                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
-                </div>
-                <div class="movieh5">Title</div>
-              </div>
-
-              <div class="divmovies">
-                <div class="movie1">
-                  <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
-                </div>
-                <div class="movieh5">Title</div>
-              </div>
 
               <div class="divmovies">
                 <div class="movie1">
@@ -370,5 +453,50 @@
             </div>
           </div>
 
+          <!-- https://www.fandango.com/freemoviecontent#fandAppBanners -->
+          <div class="moviesfandango">
+            <div data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500">
+            <div class="findmorefandango">Find more information at fandango.com</div>
+
+              <a href="http://www.fandango.com/Redirect.aspx?wss=link764x383" border="0">
+                <img src="https://images.fandango.com/r1.0.258/redesign/areas/staticpages/img/linktous/logos/764x383.gif" width="300" height="auto"
+                  border="0" alt="Find Theater Showtimes" />
+              </a>
+
+              <div>
+                <a href="https://www.fandango.com/moviesintheaters">
+                  <img src="https://images.fandango.com/r1.0.258/redesign/areas/staticpages/img/linktous/search/300x250/v1.gif" border="0"
+                    alt="Find Theater Showtimes" />
+                </a>
+                <script type="text/javascript" src="https://www.fandango.com/affiliatewidget_srchban_300x250.js?r=313_841870" async></script>
+              </div>
+              </div>
+          </div>
+      <footer class="footerMovies">
+        <div class="footerMoviesText">
+          
+          <p class="contactinfo" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="500" >About</p>
+          <p class="contactinfo" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="750" >Careers</p>
+          <p class="contactinfo" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" >NYC, NY</p>
+          <p class="contactinfo" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1250" >555.321.7654</p>
+          <p class="contactinfo" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500" >Contact us at admin@email.com</p>
+          <div class="footercenter">
+            <i data-aos="flip-down" data-aos-duration="1500" class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i data-aos="flip-down" data-aos-duration="1750" class="fa fa-instagram w3-hover-opacity"></i>
+            <i data-aos="flip-down" data-aos-duration="2000" class="fa fa-snapchat w3-hover-opacity"></i>
+            <i data-aos="flip-down" data-aos-duration="2250" class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i data-aos="flip-down" data-aos-duration="2500" class="fa fa-twitter w3-hover-opacity"></i>
+            <i data-aos="flip-down" data-aos-duration="2750" class="fa fa-linkedin w3-hover-opacity"></i>
+            </div>
+            <br>
+
+        </div>
+
+      </footer>
+
+        <script>
+          AOS.init();
+        </script>
+
         </body>
-        </html>
+        </html>;
