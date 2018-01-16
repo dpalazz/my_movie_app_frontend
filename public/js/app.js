@@ -3,6 +3,7 @@ const app = angular.module('MyMoviesApp', []);
 app.controller('MainController', ['$http', function($http){
   this.url= 'http://localhost:3000'
   this.addForm = false;
+  this.editForm = false;
   this.addMovie = () => {
     this.addForm = true;
   }
@@ -64,8 +65,7 @@ app.controller('MainController', ['$http', function($http){
   // ==============
   // UPDATE Route
   // ==============
-
-  this.processUpdateForm = (id) => {
+  this.processEditForm = (id) => {
     $http({
       url: this.url + '/movies/' + id,
       method: 'PUT',
