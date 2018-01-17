@@ -10,31 +10,54 @@
   <title>My Movies App</title>
 </head>
 <body ng-controller="MainController as ctrl">
-  <header class="topbackground">
-    <h1>In Theatre Now</h1>
+  <header class="topbackground1">
+    <h1>In Theaters Now</h1>
   </header>
+  <h2>Movies</h2>
   <main>
-    <h2>Movies</h2>
-    <div ng-repeat="movie in ctrl.movies | limitTo : 3">
-      <img src="http://via.placeholder.com/200x200">
-      <h4>{{movie.title}}</h4>
-      <h5>This is where a description would go if we were to have one but we don't so this is what we have.. </h5>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FFC300" stroke="#FFC300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-      <h4 ng-click="ctrl.deleteMovie(movie_id)" class="add">Remove</h4>
-      <h4 ng-click="ctrl.editMovie()" class="add">Edit</h4>
+    <div class="contain-in-theatres">
+      <div class="in-theatre" ng-repeat="movie in ctrl.movies">
+        <div>
+          <img src="{{movie.img_url}}">
+          <h3>{{movie.title}} ({{movie.year}})</h3>
+          <h4>Runtime: {{movie.runtime}}</h4>
+          <h4 ng-click="ctrl.deleteMovie(movie.id)" class="add">Remove</h4>
+          <h4 ng-click="ctrl.editModal = true" class="add">Edit</h4>
+          <div class="dim" ng-class="(ctrl.editModal? 'editModal' : '')">
+            <div class="modal">
+              <h4 class="close" ng-click="ctrl.editModal = false">Close</h4>
+              <div>
+                <h2>Edit</h2>
+                <form class="editModal" ng-submit="ctrl.processEditForm(movie)">
+                  <div class="row">
+                    <input type="text" ng-model="ctrl.createForm.title" placeholder="{{movie.title}}">
+                    <input type="text" ng-model="ctrl.createForm.img_url" placeholder="{{movie.img_url}}">
+                    <input type="text" ng-model="ctrl.createForm.year" placeholder="{{movie.year}}">
+                    <input type="text" ng-model="ctrl.createForm.runtime" placeholder="{{movie.runtime}}">
+                    <input type="submit">
+                  </div>
+                </form>
+              </div>
+          </div>
+        </div>
+      </div>
+
+        </div>
+      </div>
     </div>
-  </main>
-  <h2 ng-click="ctrl.addMovie()" class="add">Add New Movie</h2>
-  <div ng-show="ctrl.addForm" class="ng-hide">
-    <form ng-submit="ctrl.processForm()">
-      <input type="text" ng-model="ctrl.createForm.title" placeholder="Movie Title">
-      <input type="text" ng-model="ctrl.createForm.img_url" placeholder="Image URL">
-      <input type="text" ng-model="ctrl.createForm.year" placeholder="Year">
-      <input type="text" ng-model="ctrl.createForm.runtime" placeholder="Runtime">
-      <input type="submit">
-    </form>
-  </div>
-</aside>
-</div>
-</body>
-</html>
+      <div class="topranked">
+        <h2 ng-click="ctrl.addMovie()" class="add">Add New Movie</h2>
+        <div ng-show="ctrl.addForm" class="ng-hide">
+          <form ng-submit="ctrl.processCreateForm()">
+            <input type="text" ng-model="ctrl.createForm.title" placeholder="Movie Title">
+            <input type="text" ng-model="ctrl.createForm.img_url" placeholder="Image URL">
+            <input type="text" ng-model="ctrl.createForm.year" placeholder="Year">
+            <input type="text" ng-model="ctrl.createForm.runtime" placeholder="Runtime">
+            <input type="submit">
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">...</footer>
+  </body>
+  </html>

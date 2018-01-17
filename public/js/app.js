@@ -3,8 +3,9 @@ const app = angular.module('MyMoviesApp', []);
 app.controller('MainController', ['$http', function($http){
   this.url= 'http://localhost:3000'
   this.addForm = false;
+  this.editModal = false;
   this.addMovie = () => {
-    this.addForm = true;
+    this.addForm = !this.addForm;
   }
 
   // ========================
@@ -28,9 +29,9 @@ app.controller('MainController', ['$http', function($http){
   // CREATE Route
   // ==============
 
-  this.processForm = () => {
-    this.createForm = {}
+  this.createForm = {}
 
+  this.processCreateForm = () => {
     $http({
       url: this.url + '/movies',
       method: 'POST',
@@ -41,14 +42,34 @@ app.controller('MainController', ['$http', function($http){
     }).catch(err => console.log('Catch', err))
   }
 
-  // // ==============
-  // // DELETE Route
-  // // ==============
+  // ==============
+  // UPDATE Route
+  // ==============
 
-  this.deleteMovie = (movie_id) => {
-    // console.log(id);
+  this.createForm = {}
+
+  this.processEditForm = (movie) => {
     $http({
-      url: this.url + '/movies/' + movie_id,
+      url: this.url + '/movies/' + movie.id,
+      method: 'PUT',
+      data: this.createForm
+    }).then(response => {
+      const updateByIndex = this.movies.findIndex(movie => movie._id === movie.id)
+      this.movies.splice(updateByIndex, 1, response.data)
+      this.createForm = {};
+      this.editModal = false;
+    }, error => {
+      console.log(error.message);
+    }).catch(err => console.log(err))
+  }
+
+  // ==============
+  // DELETE Route
+  // ==============
+
+  this.deleteMovie = (id) => {
+    $http({
+      url: this.url + '/movies/' + id,
       method: 'DELETE'
     }).then(response => {
       const removeMovie = this.movies.findIndex(movie => movie._id === id);
@@ -58,38 +79,11 @@ app.controller('MainController', ['$http', function($http){
     }).catch(err => console.log(err))
   }
 
-  // ==============
-  // UPDATE Route
-  // ==============
-  // this.updateBook = () => {
-  //   // console.log(this.book);
-  //   // $http({
-  //   //   url: '/activemovie',
-  //   //   method: GET,
-  //   // }).then(response => {this.activemovie = response})
-  //   // });
-  //   //
-  //   $http({
-  //     url: '/movies/' + this.activemovie,
-  //     method: 'PUT',
-  //     data: this.formData
-  //   }).then(response => {
-  //     this.book = this.formData;
-  //     const updateByIndex = this.books.findIndex(book => book._id === response.data._id)
-  //     this.books.splice(updateByIndex, 1, response.data)
-  //     this.formData = {};
-  //   }, error => {
-  //     console.log(error.message);
-  //   }).catch(err => console.log(err))
-  // }
-
-  //
 }]);
 
 // ======================
 // ratings.ejs functions
 // ======================
-
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";

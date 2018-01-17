@@ -1,160 +1,37 @@
 body {
-  margin: 0 auto;
   font-family: 'Oswald', sans-serif;
+  margin: 0;
 }
 
-.body-container {
-  display: flex;
-  flex: 1;
-  margin-top: 10px;
-}
-
-aside {
-  flex: 0 0 12em;
-  padding-right: 20px;
-  border-right: 1px solid #90A4AE;
-}
-
-ul {
-  list-style: none;
-  text-align: left;
-}
-
-button {
-  font-size: 20px;
-  background-color: #90A4AE;
-  color: white;
-  border: none;
-  border-radius: 2px;
-  margin-bottom: 5px;
-  width: 150px;
-  padding: 5px 15px;
-}
-
-button:hover {
-  opacity: .5;
-}
-
-nav {
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 20px;
-  text-align: center;
-  border-bottom: 1px solid #90A4AE;
-  padding: 10px;
-  color: #5D6D7E;
-}
-
-.carousel {
-  margin: auto;
-  text-align: center;
-  background-color: #90A4AE;
-  padding: 20px;
-}
-
-nav a {
-  text-decoration: none;
-  margin: 0px;
-  color: #5D6D7E;
-}
-
-main {
-  margin-left: 20px;
-}
-
-.headline-wrapper {
-  background-color: #DAF7A6;
-  margin-left: 0;
-  width: 200px;
-  text-align: right;
-}
-
-h3 {
-  color: #5d6d7e;
-  padding-right: 25px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 22px;
-  letter-spacing: 1px;
-}
-
-h4 a {
-  color: #5d6d7e;
-  margin-left: 55px;
-}
-
-.section-display {
+.contain-in-theatres {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
 
-.section-display h4 {
-  color: #5d6d7e;
-}
-
-.section-display h5 {
-  color: #aeb6bf;
-  margin: 0;
-}
-
-.featured {
-  margin-right: 10px;
+.in-theatre {
   max-width: 20%;
-  margin-left: 60px;
-}
-
-.featured h4 {
-  margin: 0px;
-  margin-bottom: 2px;
-}
-
-.featured img:hover {
-  opacity: .5;
-}
-
-/*================*/
-/*Sticky Footer*/
-/*================*/
-
-/*html, body {
-  height: 100%;
-  margin: 0;
-}
-
-.wrapper {
-  min-height: 100px;
-}
-
-.footer,
-.push {
-  height: 50px;
-}*/
-
-/* ====================== */
-/* Style */
-/* ====================== */
-
-.topbackground {
-  background-image: url(https://static.pexels.com/photos/109669/pexels-photo-109669.jpeg);
-  /* background-image: url(https://images.unsplash.com/photo-1485095329183-d0797cdc5676?auto=format&fit=crop&w=2100&q=80); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 450px;
-  text-align: center;
+  margin: 30px 80px;
 }
 
 h1 {
   color: white;
   font-size: 55px;
-  margin: auto;
+  text-align: center;
   padding-top: 150px;
+}
+
+h2 {
+  padding-left: 20px;
 }
 
 .add:hover {
   opacity: .5;
+  color: grey;
   cursor: pointer;
 }
+
 .sidenav {
   height: 100%;
   width: 0;
@@ -189,52 +66,39 @@ h1 {
   margin-left: 50px;
 }
 
-body {
-  margin: 0;
-}
-
 a {
   float: left;
   color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 a:hover {
   color: black;
 }
 
+a.active {
+  background-color: #4CAF50;
+  color: white;
+}
 
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
 
-  a.active {
-    background-color: #4CAF50;
-    color: white;
-  }
+.sideNavPadding {
+  padding: 0 15px;
+}
 
-  /* .right {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding-right: 20px;
-  } */
+ /*w3schools login buttons https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form */
 
-  input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-
-  .sideNavPadding {
-    padding: 0 15px;
-  }
-
-  /* w3schools login buttons */
-  /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form */
 .moviesbutton {
   background-color: #4CAF50;
   color: white;
@@ -253,15 +117,6 @@ a:hover {
   color:white;
 }
 
-  /* @media screen and (max-height: 450px) {
-  .sidenav {
-  padding-top: 15px;
-}
-.sidenav a {
-font-size: 18px;
-}
-} */
-
 .topnav {
   text-align: left;
   display: inline-block;
@@ -271,7 +126,7 @@ font-size: 18px;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #F8F8F8;
+  background-color: #DFDFDF;
   overflow-x: hidden;
   transition: 0.5s;
 }
@@ -281,32 +136,29 @@ font-size: 18px;
   text-align: left;
   width: 100px;
 }
+
 .topnav a:hover {
   display: inline-block;
   text-align: left;
   width: 100px;
   background-color: gray;
 }
+
 .threelines {
   padding: 14px;
 }
+
 .threelines:hover {
   padding:0 60px 0 14px;
   background-color: white;
 }
 
-.recommendations {
-  display: flex;
-  flex-direction: row;
-  padding: 50px 0 100px 180px;
-
-}
-
-.moviestopranked {
+.moviestopranked1 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 50px 0 100px 180px;
+  justify-content: center;
 }
 
 .choices1 {
@@ -322,6 +174,7 @@ font-size: 18px;
   /* border-radius: 400px; */
   box-shadow: 5px 10px 10px #888888;
 }
+
 .choices2 {
   width: 100px;
   height: 100px;
@@ -336,6 +189,7 @@ font-size: 18px;
   /* border-radius: 400px; */
   box-shadow: 5px 10px 10px #888888;
 }
+
 .choices3 {
   width: 100px;
   height: 100px;
@@ -351,8 +205,8 @@ font-size: 18px;
 }
 
 .movie1 {
-  width: 100px;
-  height: auto;
+  width: auto;
+  height: 180px;
   margin: 30px 30px 5px 30px;
   text-align: center;
   /* background-image: url(https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80); */
@@ -361,42 +215,29 @@ font-size: 18px;
 }
 
 .movieh5 {
-  width: 120px;
-  margin-left:20px;
-
+  margin-top: 0;
 }
 
 .movieimg {
-  width: 100px;
-  height: auto;
+  width: auto;
+  height: 100px;
   /* margin: 30px; */
   text-align: center;
 }
 
 .divh5 {
   text-align: center;
-
 }
+
 .filmh5 {
   width: 120px;
   padding-left: 60px;
   margin-top:5px;
-}
-
-.comingsoon {
-  background-color: rgba(217, 207, 193, .4);
-  height: 500px;
-  text-align: center;
-}
-
-.ourfavorite{
-  background-color:rgba(227, 242, 253, .4);
-  height: 500px;
-  text-align: center;
+  font-size: 16px;
 }
 
 .topranked {
-  background-color:rgba(138, 162, 158, .4);
+  background-color: rgba(217, 207, 193, .4);
   /* height: 800px; */
   text-align: center;
 }
@@ -405,4 +246,145 @@ font-size: 18px;
   padding-top: 100px;
   padding-left: 160px;
   margin: 0 0;
+  font-size: 20px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100px;
+}
+
+.footer,
+.push {
+  height: 50px;
+}
+
+.footerMovies {
+  left:0px;
+  bottom:0px;
+  height:220px;
+  width:100%;
+  background-color: rgba(217, 207, 193, .4);
+  box-shadow: 5px 65px rgba(217, 207, 193, .4);
+  text-align: left;
+}
+
+.footerMoviesText {
+  padding-top: 20px;
+  letter-spacing: 1px;
+  padding-left: 230px;
+}
+
+.recommendations1 {
+  justify-content: center;
+  padding-left: 100px;
+  display: flex;
+  flex-direction: row;
+}
+
+.topbackground1 {
+  background-image: url(https://static.pexels.com/photos/109669/pexels-photo-109669.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+}
+
+.comingsoon1 {
+  background-color: rgba(217, 207, 193, .4);
+  /* height: 500px; */
+  text-align: center;
+}
+
+.ourfavorite1 {
+  background-color:rgba(227, 242, 253, .4);
+  /* height: 500px; */
+  text-align: center;
+}
+
+.titletext {
+  text-align: center;
+  color: white;
+  margin: 0 0;
+  padding: 200px 0 0 100px;
+  font-size: 50px;
+}
+
+small {
+  font-size: 16px;
+}
+
+.moviesfandango {
+  background-color:rgba(227, 242, 253, .4);
+  padding: 30px 30% 0 40%;
+  margin: 0 0;
+  text-align: center;
+  height: 550px;
+  font-size: 15px;
+}
+
+.findmorefandango {
+  margin: 0 0 0 0 ;
+  text-align: center;
+  width: 300px;
+  font-size: 15px;
+}
+
+.brandstatement {
+  height: 40px;
+  font-size: 16px;
+}
+
+.viewmore {
+  background-color: white;
+  width: 65px;
+  height: 100px;
+  color: black;
+  padding: 0 30% 0 40%;
+
+}
+
+.imgMoviesComingsoon {
+  width: 70%;
+  height: 70%;
+  display: block;
+}
+
+.editModal {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dim {
+  background-color: rgba(0, 0, 0, .4);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 5000;
+  display: none;
+}
+
+.modal {
+  background-color: white;
+  box-shadow: 0px 2px 5px grey;
+  margin: auto;
+  color: #33332e;
+  box-shadow: 0px 2px 10px #33332e;
+  text-align: left;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  border-radius: 3px;
+  /*text-align: center;*/
+  width: 200px;
+  height: 425px;
 }
