@@ -114,6 +114,15 @@ app.controller('MainController', ['$http', function($http){
 
   this.logout = () => {
     this.user = null;
+
+    $http({
+      url: '/session',
+      method: 'POST',
+      data: this.user
+    }).then(response => {
+    }, error => {
+      console.log(error.message);
+    }).catch(err => console.log(err))
   }
 
   // ==============
