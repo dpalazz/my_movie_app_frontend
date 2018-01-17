@@ -131,7 +131,7 @@ input[type=text], input[type=password] {
   text-align: left;
   display: inline-block;
   height: 100%;
-  width: 125px;
+  width: 140px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -144,13 +144,13 @@ input[type=text], input[type=password] {
 .topnav a {
   display: inline-block;
   text-align: left;
-  width: 125px;
+  width: 140px;
 }
 
 .topnav a:hover {
   display: inline-block;
   text-align: left;
-  width: 125px;
+  width: 140px;
   background-color: gray;
 }
 
