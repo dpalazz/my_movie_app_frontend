@@ -98,6 +98,7 @@ app.controller('MainController', ['$http', function($http){
       data: newUser
     }).then(response => {
       this.user = response.data;
+      this.user.name = this.newUserForm.username;
       this.newUserForm = {};
       closeNav();
     }, error => {
@@ -126,6 +127,7 @@ app.controller('MainController', ['$http', function($http){
       data: user
     }).then(response => {
       this.user = response.data;
+      this.user.name = this.loginForm.username;
       this.loginForm = {};
       closeNavLogin();
     }, error => {
