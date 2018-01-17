@@ -22,7 +22,7 @@
           <h3>{{movie.title}} ({{movie.year}})</h3>
           <h4>Runtime: {{movie.runtime}}</h4>
           <h4 ng-click="ctrl.deleteMovie(movie.id)" class="add">Remove</h4>
-          <h4 ng-if="!ctrl.user" ng-click="ctrl.editModal = true; ctrl.toEdit = movie" class="add">Edit</h4>
+          <h4 ng-if="ctrl.user" ng-click="ctrl.editModal = true; ctrl.toEdit = movie" class="add">Edit</h4>
         </div>
       </div>
     </div>
