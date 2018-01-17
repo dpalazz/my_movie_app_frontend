@@ -1,7 +1,7 @@
 <!-- sidenav -->
 <div class="topnav">
     <!-- three lines icon -->
-    <a href="/" style="font-size:30px;">&#9776;</a>  
+    <a href="/" style="font-size:30px;">&#9776;</a>
     <a href="/">HOME</a>
     <a href="/movies">MOVIES</a>
     <div class="right">
@@ -36,7 +36,9 @@
     <div class="sideNavPadding">
         <h2 class="sideNavH2">Sign Up</h2>
         <form class="formWidth" ng-submit='ctrl.registerUser()'>
-            <div id="incorrectPassword"></div>
+            <div ng-if="ctrl.shortUser == true" id="incorrectPassword">Username too short</div>
+            <div ng-if="ctrl.shortPass == true" id="incorrectPassword">Password too short</div>
+            <div ng-if="ctrl.taken == true" id="incorrectPassword">Username taken</div>
             <label for="username">Username: </label>
             <input type="text" class="form-control" placeholder="username" ng-model="ctrl.newUserForm.username" />
             <div class="form-group">
@@ -53,6 +55,7 @@
     <div class="sideNavPadding">
         <h2 class="sideNavH2">Login</h2>
         <form class="formWidth" ng-submit='ctrl.loginUser()'>
+            <div ng-if="ctrl.badLogin == true" id="incorrectPassword">Incorrect Username/Password</div>
             <div class="form-group">
                 <label for="pwd">Username: </label>
                 <input type="text" class="form-control" placeholder="username" ng-model="ctrl.loginForm.username" />

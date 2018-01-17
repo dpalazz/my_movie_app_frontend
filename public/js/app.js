@@ -1,9 +1,13 @@
 const app = angular.module('MyMoviesApp', []);
 
-app.controller('MainController', ['$http', function($http){
-  this.url= 'http://localhost:3000'
+app.controller('MainController', ['$http', function ($http) {
+  this.url = 'http://localhost:3000'
   this.addForm = false;
   this.editModal = false;
+  this.taken = false;
+  this.shortPass = false;
+  this.shortUser = false;
+  this.badLogin = false;
   this.addMovie = () => {
     this.addForm = !this.addForm;
   }
@@ -88,28 +92,52 @@ app.controller('MainController', ['$http', function($http){
   }
 
   // ==============
-  // Login Route
+  // Register Route
   // ==============
 
   this.registerUser = (id) => {
 
+    this.shortUser = false;
+    this.shortPass = false;
+    this.taken = false;
+    
+    let pass = true;
     const newUser = {
       'email': `${this.newUserForm.username}@sample.com`,
       'password': this.newUserForm.password
     }
 
-    $http({
-      url: this.url + '/auth/',
-      method: 'POST',
-      data: newUser
-    }).then(response => {
-      this.user = response.data;
-      this.user.name = this.newUserForm.username;
-      this.newUserForm = {};
-      closeNav();
-    }, error => {
-      console.log(error.message);
-    }).catch(err => console.log(err))
+
+    if (this.newUserForm.username.length < 6) {
+      pass = false;
+      this.shortUser = true;
+    }
+
+    if (this.newUserForm.password.length < 8) {
+      pass = false;
+      this.shortPass = true;
+    }
+
+    if (pass) {
+      $http({
+        url: this.url + '/auth/',
+        method: 'POST',
+        data: newUser
+      }).then(response => {
+        this.user = response.data;
+        this.user.name = this.newUserForm.username;
+        this.newUserForm = {};
+        this.shortPass = false;
+        this.shortUser = false;
+        this.taken = false;
+        closeNav();
+      }, error => {
+        this.newUserForm = {};
+        this.taken = true;
+        console.log(error.message);
+      }).catch(err => console.log(err))
+    }
+
   }
 
   this.logout = () => {
@@ -125,7 +153,7 @@ app.controller('MainController', ['$http', function($http){
   }
 
   // ==============
-  // Register Route
+  // Login Route
   // ==============
 
   this.loginUser = (id) => {
@@ -150,11 +178,16 @@ app.controller('MainController', ['$http', function($http){
         method: 'POST',
         data: this.user
       }).then(response => {
+        this.badLogin = false;
+        this.shortUser = false;
+        this.shortPass = false;
       }, error => {
+        
         console.log(error.message);
       }).catch(err => console.log(err))
 
     }, error => {
+      this.badLogin = true;
       console.log(error.message);
     }).catch(err => console.log(err))
   }
