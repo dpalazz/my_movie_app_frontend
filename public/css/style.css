@@ -97,7 +97,7 @@ input[type=text], input[type=password] {
   padding: 0 15px;
 }
 
- /*w3schools login buttons https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form */
+/*w3schools login buttons https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form */
 
 .moviesbutton {
   background-color: #4CAF50;
@@ -352,6 +352,12 @@ small {
   height: 70%;
   display: block;
 }
+.new-movie-container {
+  background-color: rgba(217, 207, 193, .4);
+  text-align: center;
+  max-width: 50%;
+  margin: 0 auto;
+}
 
 .new-movie-container {
   background-color: rgba(217, 207, 193, .4);
@@ -368,6 +374,7 @@ small {
   outline: none;
 }
 
+}
 .dim {
   background-color: rgba(0, 0, 0, .4);
   position: absolute;

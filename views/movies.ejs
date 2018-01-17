@@ -38,26 +38,24 @@
                   </div>
                 </form>
               </div>
+            </div>
           </div>
         </div>
       </div>
-
-        </div>
+    </div>
+    <div class="new-movie-container">
+      <h2 ng-click="ctrl.addMovie()" class="add">Add New Movie</h2>
+      <div ng-show="ctrl.addForm" class="ng-hide">
+        <form ng-submit="ctrl.processCreateForm()">
+          <input type="text" ng-model="ctrl.createForm.title" placeholder="Movie Title">
+          <input type="text" ng-model="ctrl.createForm.img_url" placeholder="Image URL">
+          <input type="text" ng-model="ctrl.createForm.year" placeholder="Year">
+          <input type="text" ng-model="ctrl.createForm.runtime" placeholder="Runtime">
+          <input type="submit">
+        </form>
       </div>
     </div>
-      <div class="new-movie-container">
-        <h2 ng-click="ctrl.addMovie()" class="add">Add New Movie</h2>
-        <div ng-show="ctrl.addForm" class="ng-hide">
-          <form ng-submit="ctrl.processCreateForm()">
-            <input type="text" ng-model="ctrl.createForm.title" placeholder="Movie Title">
-            <input type="text" ng-model="ctrl.createForm.img_url" placeholder="Image URL">
-            <input type="text" ng-model="ctrl.createForm.year" placeholder="Year">
-            <input type="text" ng-model="ctrl.createForm.runtime" placeholder="Runtime">
-            <input type="submit">
-          </form>
-        </div>
-      </div>
-    </main>
-    <footer class="footer">...</footer>
-  </body>
-  </html>
+  </main>
+  <footer class="footer">...</footer>
+</body>
+</html>
