@@ -343,7 +343,7 @@ small {
   width: 65px;
   height: 100px;
   color: black;
-  padding: 0 30% 0 40%;
+  padding: 0 30% 0 30%;
 
 }
 
@@ -352,6 +352,13 @@ small {
   height: 70%;
   display: block;
 }
+.new-movie-container {
+  background-color: rgba(217, 207, 193, .4);
+  text-align: center;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
 .new-movie-container {
   background-color: rgba(217, 207, 193, .4);
   text-align: center;
