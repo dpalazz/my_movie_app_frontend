@@ -34,11 +34,11 @@
         <!-- if not logged in -->
         <!-- <a ng-if='!ctrl.user'> -->
         <a href="#" onclick="openNavLogin()">
-          <span class="glyphicon glyphicon-log-in"></span> Login</a>
+          <span class="glyphicon glyphicon-log-in" ng-if="!ctrl.user"></span> Login</a>
           <!-- </a> -->
           <!-- <a ng-if='!ctrl.user'> -->
           <a href="#" onclick="openNav()">
-            <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+            <span class="glyphicon glyphicon-user" ng-if="!ctrl.user"></span> Sign Up</a>
             <!-- </a> -->
             <!-- if logged in -->
             <a ng-if='ctrl.user' href="#" ng-click='ctrl.logout()'>

@@ -79,6 +79,60 @@ app.controller('MainController', ['$http', function($http){
     }).catch(err => console.log(err))
   }
 
+  // ==============
+  // Login Route
+  // ==============
+  
+  this.registerUser = (id) => {
+
+    const newUser = {
+      'email': `${this.newUserForm.username}@sample.com`,
+      'password': this.newUserForm.password
+    }
+
+    $http({
+      url: this.url + '/auth/',
+      method: 'POST',
+      data: newUser
+    }).then(response => {
+      this.user = response.data;
+      this.user.name = this.newUserForm.username;
+      this.newUserForm = {};
+      closeNav();
+    }, error => {
+      console.log(error.message);
+    }).catch(err => console.log(err))
+  }
+
+  this.logout = () => {
+    this.user = null;
+  }
+  
+  // ==============
+  // Register Route
+  // ==============
+
+  this.loginUser = (id) => {
+
+    const user = {
+      'email': `${this.loginForm.username}@sample.com`,
+      'password': this.loginForm.password
+    }
+
+    $http({
+      url: this.url + '/auth/sign_in',
+      method: 'POST',
+      data: user
+    }).then(response => {
+      this.user = response.data;
+      this.user.name = this.loginForm.username;
+      this.loginForm = {};
+      closeNavLogin();
+    }, error => {
+      console.log(error.message);
+    }).catch(err => console.log(err))
+  }
+
 }]);
 
 // ======================
