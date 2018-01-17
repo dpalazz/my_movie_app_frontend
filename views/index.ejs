@@ -33,12 +33,12 @@
         <a ng-if='ctrl.user'> Welcome {{ ctrl.user.name }}!</a>
         <!-- if not logged in -->
         <!-- <a ng-if='!ctrl.user'> -->
-        <a href="#" onclick="openNavLogin()">
-          <span class="glyphicon glyphicon-log-in" ng-if="!ctrl.user"></span> Login</a>
+        <a href="#" onclick="openNavLogin()" ng-if="!ctrl.user">
+          <span class="glyphicon glyphicon-log-in"></span> Login</a>
           <!-- </a> -->
           <!-- <a ng-if='!ctrl.user'> -->
-          <a href="#" onclick="openNav()">
-            <span class="glyphicon glyphicon-user" ng-if="!ctrl.user"></span> Sign Up</a>
+          <a href="#" onclick="openNav()" ng-if="!ctrl.user">
+            <span class="glyphicon glyphicon-user"></span> Sign Up</a>
             <!-- </a> -->
             <!-- if logged in -->
             <a ng-if='ctrl.user' href="#" ng-click='ctrl.logout()'>
