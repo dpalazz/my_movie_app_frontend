@@ -13,6 +13,11 @@
   <header class="topbackground1">
     <h1>In Theaters Now</h1>
   </header>
+
+  <!-- ////// Side Nav partial////-->
+  <% include partials/nav.ejs %>
+  <!--///////////////////////////// -->
+
   <h2>Movies</h2>
   <main>
     <div class="contain-in-theatres">
@@ -27,7 +32,7 @@
       </div>
     </div>
       <div class="new-movie-container">
-        <h2 ng-click="ctrl.addMovie()" class="add">Add New Movie</h2>
+        <h2 class="h2addMovie" ng-click="ctrl.addMovie()" class="add">Add New Movie</h2>
         <div ng-show="ctrl.addForm" class="ng-hide">
           <form ng-submit="ctrl.processCreateForm()">
             <input type="text" ng-model="ctrl.createForm.title" placeholder="Movie Title"><br/>

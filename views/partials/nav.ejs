@@ -1,0 +1,72 @@
+<!-- sidenav -->
+<div class="topnav">
+    <!-- three lines icon -->
+    <a href="/" style="font-size:30px;">&#9776;</a>  
+    <a href="/">HOME</a>
+    <a href="/movies">MOVIES</a>
+    <div class="right">
+        <a ng-if='ctrl.user'> Welcome {{ ctrl.user.name }}!</a>
+        <!-- if not logged in -->
+        <!-- <a ng-if='!ctrl.user'> -->
+        <a href="#" onclick="openNavLogin()" ng-if="!ctrl.user">
+            <span class="glyphicon glyphicon-log-in"></span> Login</a>
+        <!-- </a> -->
+        <!-- <a ng-if='!ctrl.user'> -->
+        <a href="#" onclick="openNav()" ng-if="!ctrl.user">
+            <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+        <!-- </a> -->
+        <!-- if logged in -->
+        <a ng-if='ctrl.user' href="#" ng-click='ctrl.logout()'>
+            <span class="glyphicon glyphicon-log-out"></span> Log Out</a>
+        </a>
+        <a ng-if='ctrl.user' href="#topranked">
+            <span class="glyphicon glyphicon-log-out"></span> Top Ranked Movies</a>
+        </a>
+        <a ng-if='ctrl.user' href="#ourfavorite">
+            <span class="glyphicon glyphicon-log-out"></span> Our Favorite Movies</a>
+        </a>
+        <a ng-if='ctrl.user' href="#comingsoon">
+            <span class="glyphicon glyphicon-log-out"></span> Coming Soon</a>
+        </a>
+    </div>
+</div>
+<!-- expanding sidenav SIGNUP -->
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="sideNavPadding">
+        <h2 class="sideNavH2">Sign Up</h2>
+        <form class="formWidth" ng-submit='ctrl.registerUser()'>
+            <div id="incorrectPassword"></div>
+            <label for="username">Username: </label>
+            <input type="text" class="form-control" placeholder="username" ng-model="ctrl.newUserForm.username" />
+            <div class="form-group">
+                <label for="pwd">Password: </label>
+                <input type="password" class="form-control" placeholder="password" ng-model="ctrl.newUserForm.password" />
+            </div>
+            <button class="moviesbutton" onclick="closeNavLogin()" type="submit">Sign Up</button>
+        </form>
+    </div>
+</div>
+<!-- expanding sidenav LOGIN -->
+<div id="mySidenavLogin" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNavLogin()">&times;</a>
+    <div class="sideNavPadding">
+        <h2 class="sideNavH2">Login</h2>
+        <form class="formWidth" ng-submit='ctrl.loginUser()'>
+            <div class="form-group">
+                <label for="pwd">Username: </label>
+                <input type="text" class="form-control" placeholder="username" ng-model="ctrl.loginForm.username" />
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password: </label>
+                <input type="password" class="form-control" placeholder="password" ng-model="ctrl.loginForm.password" />
+            </div>
+            <div class="checkbox"></div>
+            <button class="moviesbutton" onclick="closeNav()" type="submit">Login</button>
+        </form>
+        <!-- <form ng-if='ctrl.user' ng-submit='ctrl.logout()'>
+            <input type='submit' value='logout' />
+          </form> -->
+    </div>
+</div>
+</div>

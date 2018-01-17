@@ -25,76 +25,11 @@
         employee recommendations - we are passionate about movies
       </div>
     </div>
-    <!-- sidenav -->
-    <div class="topnav">
-      <span class="threelines" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-      <a href="/movies">MOVIES</a>
-      <div class="right">
-        <a ng-if='ctrl.user'> Welcome {{ ctrl.user.name }}!</a>
-        <!-- if not logged in -->
-        <!-- <a ng-if='!ctrl.user'> -->
-        <a href="#" onclick="openNavLogin()" ng-if="!ctrl.user">
-          <span class="glyphicon glyphicon-log-in"></span> Login</a>
-          <!-- </a> -->
-          <!-- <a ng-if='!ctrl.user'> -->
-          <a href="#" onclick="openNav()" ng-if="!ctrl.user">
-            <span class="glyphicon glyphicon-user"></span> Sign Up</a>
-            <!-- </a> -->
-            <!-- if logged in -->
-            <a ng-if='ctrl.user' href="#" ng-click='ctrl.logout()'>
-              <span class="glyphicon glyphicon-log-out"></span> Log Out</a>
-            </a>
-            <a ng-if='ctrl.user' href="#topranked">
-              <span class="glyphicon glyphicon-log-out"></span> Top Ranked Movies</a>
-            </a>
-            <a ng-if='ctrl.user' href="#ourfavorite">
-              <span class="glyphicon glyphicon-log-out"></span> Our Favorite Movies</a>
-            </a>
-            <a ng-if='ctrl.user' href="#comingsoon">
-              <span class="glyphicon glyphicon-log-out"></span> Coming Soon</a>
-            </a>
-          </div>
-        </div>
-        <!-- expanding sidenav SIGNUP -->
-        <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <div class="sideNavPadding">
-            <h2 class="sideNavH2">Sign Up</h2>
-            <form class="formWidth" ng-submit='ctrl.registerUser()'>
-              <div id="incorrectPassword"></div>
-              <label for="username">Username: </label>
-              <input type="text" class="form-control" placeholder="username" ng-model="ctrl.newUserForm.username" />
-              <div class="form-group">
-                <label for="pwd">Password: </label>
-                <input type="password" class="form-control" placeholder="password" ng-model="ctrl.newUserForm.password" />
-              </div>
-              <button class="moviesbutton" onclick="closeNavLogin()" type="submit">Sign Up</button>
-            </form>
-          </div>
-        </div>
-        <!-- expanding sidenav LOGIN -->
-        <div id="mySidenavLogin" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNavLogin()">&times;</a>
-          <div class="sideNavPadding">
-            <h2 class="sideNavH2">Login</h2>
-            <form class="formWidth" ng-submit='ctrl.loginUser()'>
-              <div class="form-group">
-                <label for="pwd">Username: </label>
-                <input type="text" class="form-control" placeholder="username" ng-model="ctrl.loginForm.username" />
-              </div>
-              <div class="form-group">
-                <label for="pwd">Password: </label>
-                <input type="password" class="form-control" placeholder="password" ng-model="ctrl.loginForm.password" />
-              </div>
-              <div class="checkbox"></div>
-              <button class="moviesbutton" onclick="closeNav()" type="submit">Login</button>
-            </form>
-            <!-- <form ng-if='ctrl.user' ng-submit='ctrl.logout()'>
-            <input type='submit' value='logout' />
-          </form> -->
-        </div>
-      </div>
-    </div>
+
+    <!-- ////// Side Nav partial////-->
+    <% include partials/nav.ejs %>
+    <!--///////////////////////////// -->
+    
     <div class="recommendations1">
       <a href="#topranked">
         <div class="divh5">
@@ -155,63 +90,64 @@
       <div class="moviestopranked1">
         <div class="divmovies">
           <div class="movie1">
-            <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+            <img class="movieimg" src="http://img.soundtrackcollector.com/cd/large/Supertroopers_TVT6870.jpg" alt="">
           </div>
-          <div class="movieh5">Title</div>
+          <div class="movieh5">Super Troopers</div>
         </div>
         <div class="divmovies">
           <div class="movie1">
-            <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+            <img class="movieimg" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Avatar-Teaser-Poster.jpg/220px-Avatar-Teaser-Poster.jpg"
+              alt="">
           </div>
-          <div class="movieh5">Title</div>
+          <div class="movieh5">Avatar</div>
         </div>
         <div class="divmovies">
           <div class="movie1">
-            <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+            <img class="movieimg" src="https://images-na.ssl-images-amazon.com/images/I/31Y3Z64XZQL.jpg" alt="">
           </div>
-          <div class="movieh5">Title</div>
+          <div class="movieh5">Elf</div>
         </div>
         <div class="divmovies">
           <div class="movie1">
-            <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+            <img class="movieimg" src="https://i.ytimg.com/vi/zOS5NIKz_bw/hqdefault.jpg" alt="">
           </div>
-          <div class="movieh5">Title</div>
+          <div class="movieh5">Inglorious Bastards</div>
         </div>
         <div class="divmovies">
           <div class="movie1">
-            <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+            <img class="movieimg" src="https://images-na.ssl-images-amazon.com/images/I/71PSMJ0TwmL._SY355_.jpg" alt="">
           </div>
-          <div class="movieh5">Title</div>
+          <div class="movieh5">The Force Awakens</div>
         </div>
         <div class="divmovies">
           <div class="movie1">
-            <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+            <img class="movieimg" src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/TheAvengers2012Poster.jpg/220px-TheAvengers2012Poster.jpg" alt="">
           </div>
-          <div class="movieh5">Title</div>
+          <div class="movieh5">Avengers</div>
         </div>
         <div class="divmovies">
           <div class="movie1">
-            <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+            <img class="movieimg" src="https://images-na.ssl-images-amazon.com/images/I/51USxyLM87L._SY355_.jpg" alt="">
           </div>
-          <div class="movieh5">Title</div>
+          <div class="movieh5">Jaws</div>
         </div>
         <div class="divmovies">
           <div class="movie1">
-            <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+            <img class="movieimg" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Frozen_%282013_film%29_poster.jpg/220px-Frozen_%282013_film%29_poster.jpg" alt="">
           </div>
-          <div class="movieh5">Title</div>
+          <div class="movieh5">Frozen</div>
         </div>
         <div class="divmovies">
           <div class="movie1">
-            <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+            <img class="movieimg" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d5/Iron_Man_3_theatrical_poster.jpg/220px-Iron_Man_3_theatrical_poster.jpg" alt="">
           </div>
-          <div class="movieh5">Title</div>
+          <div class="movieh5">Iron Man</div>
         </div>
         <div class="divmovies">
           <div class="movie1">
-            <img class="movieimg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1950&q=80" alt="">
+            <img class="movieimg" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Skyfall_poster.jpg/220px-Skyfall_poster.jpg" alt="">
           </div>
-          <div class="movieh5">Title</div>
+          <div class="movieh5">Skyfall</div>
         </div>
       </div>
     </div>
