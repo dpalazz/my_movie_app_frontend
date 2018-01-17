@@ -8,6 +8,16 @@ app.controller('MainController', ['$http', function($http){
     this.addForm = !this.addForm;
   }
 
+  $http({
+    url: '/session',
+    method: 'GET'
+  }).then(response => {
+    console.log(response.data);
+    this.user = response.data;
+  }, error => {
+    // console.log(error.message);
+  }).catch(err => console.log(err))
+
   // ========================
   // GET Route
   // ========================
@@ -128,6 +138,17 @@ app.controller('MainController', ['$http', function($http){
       this.user.name = this.loginForm.username;
       this.loginForm = {};
       closeNavLogin();
+
+      $http({
+        url: '/session',
+        method: 'POST',
+        data: this.user
+      }).then(response => {
+        console.log('turp');
+      }, error => {
+        console.log(error.message);
+      }).catch(err => console.log(err))
+
     }, error => {
       console.log(error.message);
     }).catch(err => console.log(err))
