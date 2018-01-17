@@ -21,8 +21,7 @@ The project started with researching and selecting which available movie APIs. O
 
 ## Deployment
 
-[Heroku](https://www.heroku.com)
-Live Site: ()
+* Live Site: (https://laventure-cinema-front.herokuapp.com/)
 
 ## Built With
 
