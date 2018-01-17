@@ -94,6 +94,10 @@ a.active {
   color: white;
 }
 
+.sideNavH2 {
+  padding-left: 0;
+}
+
 input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
