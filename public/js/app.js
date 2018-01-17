@@ -100,7 +100,7 @@ app.controller('MainController', ['$http', function ($http) {
     this.shortUser = false;
     this.shortPass = false;
     this.taken = false;
-    
+
     let pass = true;
     const newUser = {
       'email': `${this.newUserForm.username}@sample.com`,
@@ -171,6 +171,9 @@ app.controller('MainController', ['$http', function ($http) {
       this.user = response.data;
       this.user.name = this.loginForm.username;
       this.loginForm = {};
+      this.badLogin = false;
+      this.shortUser = false;
+      this.shortPass = false;
       closeNavLogin();
 
       $http({
@@ -178,9 +181,7 @@ app.controller('MainController', ['$http', function ($http) {
         method: 'POST',
         data: this.user
       }).then(response => {
-        this.badLogin = false;
-        this.shortUser = false;
-        this.shortPass = false;
+      
       }, error => {
         
         console.log(error.message);
