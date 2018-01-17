@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const session = require('express-session');
-const PORT = 3001 || process.env.PORT;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, console.log('My Movies App on PORT:', PORT));
 
 // ==============
