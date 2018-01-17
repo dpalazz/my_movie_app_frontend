@@ -22,61 +22,57 @@
           <h3>{{movie.title}} ({{movie.year}})</h3>
           <h4>Runtime: {{movie.runtime}}</h4>
           <h4 ng-click="ctrl.deleteMovie(movie.id)" class="add">Remove</h4>
-          <h4 ng-if="!ctrl.user" ng-click="ctrl.editModal = true" class="add">Edit</h4>
-          <div class="dim" ng-class="(ctrl.editModal? 'editModal' : '')">
-            <div class="modal">
-              <h4 class="close" ng-click="ctrl.editModal = false">Close</h4>
-              <div>
-                <h2>Edit</h2>
-                <form class="editModal" ng-submit="ctrl.processEditForm(movie)">
-                  <div class="row">
-                    <input type="text" ng-model="ctrl.createForm.title" placeholder="{{movie.title}}">
-                    <input type="text" ng-model="ctrl.createForm.img_url" placeholder="{{movie.img_url}}">
-                    <input type="text" ng-model="ctrl.createForm.year" placeholder="{{movie.year}}">
-                    <input type="text" ng-model="ctrl.createForm.runtime" placeholder="{{movie.runtime}}">
-                    <input type="submit">
-                  </div>
-                </form>
-              </div>
-          </div>
-        </div>
-      </div>
-
+          <h4 ng-if="!ctrl.user" ng-click="ctrl.editModal = true; ctrl.toEdit = movie" class="add">Edit</h4>
         </div>
       </div>
     </div>
-      <div class="new-movie-container">
-        <h2 ng-click="ctrl.addMovie()" class="add">Add New Movie</h2>
-        <div ng-show="ctrl.addForm" class="ng-hide">
-          <form ng-submit="ctrl.processCreateForm()">
-            <input type="text" ng-model="ctrl.createForm.title" placeholder="Movie Title">
-            <input type="text" ng-model="ctrl.createForm.img_url" placeholder="Image URL">
-            <input type="text" ng-model="ctrl.createForm.year" placeholder="Year">
-            <input type="text" ng-model="ctrl.createForm.runtime" placeholder="Runtime">
-            <input type="submit">
+    <div class="new-movie-container">
+      <h2 ng-click="ctrl.addMovie()" class="add">Add New Movie</h2>
+      <div ng-show="ctrl.addForm" class="ng-hide">
+        <form ng-submit="ctrl.processCreateForm()">
+          <input type="text" ng-model="ctrl.createForm.title" placeholder="Movie Title">
+          <input type="text" ng-model="ctrl.createForm.img_url" placeholder="Image URL">
+          <input type="text" ng-model="ctrl.createForm.year" placeholder="Year">
+          <input type="text" ng-model="ctrl.createForm.runtime" placeholder="Runtime">
+          <input type="submit">
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer class="footerMovies">
+    <div class="footerMoviesText">
+      <p class="contactinfo" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="500" >About</p>
+      <p class="contactinfo" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="750" >Careers</p>
+      <p class="contactinfo" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" >NYC, NY</p>
+      <p class="contactinfo" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1250" >555.321.7654</p>
+      <p class="contactinfo" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500" >Contact us at admin@email.com</p>
+      <div class="footercenter">
+        <i data-aos="flip-down" data-aos-duration="1500" class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i data-aos="flip-down" data-aos-duration="1750" class="fa fa-instagram w3-hover-opacity"></i>
+        <i data-aos="flip-down" data-aos-duration="2000" class="fa fa-snapchat w3-hover-opacity"></i>
+        <i data-aos="flip-down" data-aos-duration="2250" class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i data-aos="flip-down" data-aos-duration="2500" class="fa fa-twitter w3-hover-opacity"></i>
+        <i data-aos="flip-down" data-aos-duration="2750" class="fa fa-linkedin w3-hover-opacity"></i>
+      </div>
+      <br>
+    </div>
+    <div class="dim" ng-class="(ctrl.editModal? 'editModal' : '')">
+      <div class="modal">
+        <h4 class="close" ng-click="ctrl.editModal = false">Close</h4>
+        <div>
+          <h2>Edit</h2>
+          <form class="editModal" ng-submit="ctrl.processEditForm(ctrl.toEdit)">
+            <div class="row">
+              <input type="text" ng-model="ctrl.createForm.title" placeholder="{{ctrl.toEdit.title}}">
+              <input type="text" ng-model="ctrl.createForm.img_url" placeholder="{{ctrl.toEdit.img_url}}">
+              <input type="text" ng-model="ctrl.createForm.year" placeholder="{{ctrl.toEdit.year}}">
+              <input type="text" ng-model="ctrl.createForm.runtime" placeholder="{{ctrl.toEdit.runtime}}">
+              <input type="submit">
+            </div>
           </form>
         </div>
       </div>
-    </main>
-    <footer class="footerMovies">
-      <div class="footerMoviesText">
-        <p class="contactinfo" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="500" >About</p>
-        <p class="contactinfo" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="750" >Careers</p>
-        <p class="contactinfo" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" >NYC, NY</p>
-        <p class="contactinfo" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1250" >555.321.7654</p>
-        <p class="contactinfo" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500" >Contact us at admin@email.com</p>
-
-        <div class="footercenter">
-          <i data-aos="flip-down" data-aos-duration="1500" class="fa fa-facebook-official w3-hover-opacity"></i>
-          <i data-aos="flip-down" data-aos-duration="1750" class="fa fa-instagram w3-hover-opacity"></i>
-          <i data-aos="flip-down" data-aos-duration="2000" class="fa fa-snapchat w3-hover-opacity"></i>
-          <i data-aos="flip-down" data-aos-duration="2250" class="fa fa-pinterest-p w3-hover-opacity"></i>
-          <i data-aos="flip-down" data-aos-duration="2500" class="fa fa-twitter w3-hover-opacity"></i>
-          <i data-aos="flip-down" data-aos-duration="2750" class="fa fa-linkedin w3-hover-opacity"></i>
-        </div>
-
-        <br>
-      </div>
-    </footer>
-  </body>
-  </html>
+    </div>
+  </footer>
+</body>
+</html>
