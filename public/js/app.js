@@ -1,7 +1,7 @@
 const app = angular.module('MyMoviesApp', []);
 
 app.controller('MainController', ['$http', function ($http) {
-  this.url = 'http://localhost:3000'
+  this.url = 'https://laventure-cinema.herokuapp.com/'
   this.addForm = false;
   this.editModal = false;
   this.taken = false;
@@ -181,9 +181,9 @@ app.controller('MainController', ['$http', function ($http) {
         method: 'POST',
         data: this.user
       }).then(response => {
-      
+
       }, error => {
-        
+
         console.log(error.message);
       }).catch(err => console.log(err))
 
