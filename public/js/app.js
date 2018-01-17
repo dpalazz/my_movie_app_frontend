@@ -12,7 +12,6 @@ app.controller('MainController', ['$http', function($http){
     url: '/session',
     method: 'GET'
   }).then(response => {
-    console.log(response.data);
     this.user = response.data;
   }, error => {
     // console.log(error.message);
@@ -143,7 +142,6 @@ app.controller('MainController', ['$http', function($http){
         method: 'POST',
         data: this.user
       }).then(response => {
-        console.log('turp');
       }, error => {
         console.log(error.message);
       }).catch(err => console.log(err))
