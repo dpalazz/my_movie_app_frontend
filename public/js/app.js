@@ -117,8 +117,7 @@ app.controller('MainController', ['$http', function($http){
 
     $http({
       url: '/session',
-      method: 'POST',
-      data: this.user
+      method: 'DELETE',
     }).then(response => {
     }, error => {
       console.log(error.message);

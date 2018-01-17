@@ -26,5 +26,10 @@ router.post('/', (req, res) => {
   req.session.save()
 });
 
+router.delete('/', (req, res) => {
+  req.session.user = null;
+  req.session.save()
+});
+
 
 module.exports = router;
