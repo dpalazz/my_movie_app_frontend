@@ -21,8 +21,7 @@ The project started with researching and selecting which available movie APIs. O
 
 ## Deployment
 
-[Heroku](https://www.heroku.com)
-Live Site: ()
+* Live Site: (https://laventure-cinema-front.herokuapp.com/)
 
 ## Built With
 
@@ -42,3 +41,7 @@ The team used [Trello](https://trello.com/) to track progress and assign tasks.
 ## Acknowledgments
 
 * Images from [Unsplash](https://unsplash.com/)
+* Fandango Widget [Fandango Widgets](https://www.fandango.com/freemoviecontent#fandAppBanners)
+* Login Form [w3schools - Forms](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_signup_form)
+* On Scroll Animations Library [AOS library](https://michalsnik.github.io/aos/)
+
