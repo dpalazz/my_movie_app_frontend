@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(session({
   secret: '254khsdf9fhhh00sdfasdf0dsf08',
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: true
 }));
 app.use(express.static('public'));
 
@@ -27,7 +27,7 @@ const sessionsController = require('./controllers/sessions.js')
 // USE OF CONTROLLERS
 // ==============
 
-// app.use('/session', sessionsController);
+app.use('/session', sessionsController);
 app.use('/movies', moviesController);
 
 // ==============

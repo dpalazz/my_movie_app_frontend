@@ -30,27 +30,27 @@
       <span class="threelines" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
       <a href="/movies">MOVIES</a>
       <div class="right">
-        <a ng-if='ctrl.user'> Welcome!</a>
+        <a ng-if='ctrl.user'> Welcome {{ ctrl.user.name }}!</a>
         <!-- if not logged in -->
         <!-- <a ng-if='!ctrl.user'> -->
-        <a href="#" onclick="openNavLogin()">
+        <a href="#" onclick="openNavLogin()" ng-if="!ctrl.user">
           <span class="glyphicon glyphicon-log-in"></span> Login</a>
           <!-- </a> -->
           <!-- <a ng-if='!ctrl.user'> -->
-          <a href="#" onclick="openNav()">
+          <a href="#" onclick="openNav()" ng-if="!ctrl.user">
             <span class="glyphicon glyphicon-user"></span> Sign Up</a>
             <!-- </a> -->
             <!-- if logged in -->
             <a ng-if='ctrl.user' href="#" ng-click='ctrl.logout()'>
               <span class="glyphicon glyphicon-log-out"></span> Log Out</a>
             </a>
-            <a ng-if='ctrl.user' href="#topranked" ng-click='ctrl.logout()'>
+            <a ng-if='ctrl.user' href="#topranked">
               <span class="glyphicon glyphicon-log-out"></span> Top Ranked Movies</a>
             </a>
-            <a ng-if='ctrl.user' href="#ourfavorite" ng-click='ctrl.logout()'>
+            <a ng-if='ctrl.user' href="#ourfavorite">
               <span class="glyphicon glyphicon-log-out"></span> Our Favorite Movies</a>
             </a>
-            <a ng-if='ctrl.user' href="#comingsoon" ng-click='ctrl.logout()'>
+            <a ng-if='ctrl.user' href="#comingsoon">
               <span class="glyphicon glyphicon-log-out"></span> Coming Soon</a>
             </a>
           </div>
