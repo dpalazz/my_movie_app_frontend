@@ -22,7 +22,7 @@
           <h3>{{movie.title}} ({{movie.year}})</h3>
           <h4>Runtime: {{movie.runtime}}</h4>
           <h4 ng-click="ctrl.deleteMovie(movie.id)" class="add">Remove</h4>
-          <h4 ng-click="ctrl.editModal = true" class="add">Edit</h4>
+          <h4 ng-if="!ctrl.user" ng-click="ctrl.editModal = true" class="add">Edit</h4>
           <div class="dim" ng-class="(ctrl.editModal? 'editModal' : '')">
             <div class="modal">
               <h4 class="close" ng-click="ctrl.editModal = false">Close</h4>
@@ -45,7 +45,7 @@
         </div>
       </div>
     </div>
-      <div class="topranked">
+      <div class="new-movie-container">
         <h2 ng-click="ctrl.addMovie()" class="add">Add New Movie</h2>
         <div ng-show="ctrl.addForm" class="ng-hide">
           <form ng-submit="ctrl.processCreateForm()">
