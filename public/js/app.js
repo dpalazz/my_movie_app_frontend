@@ -8,6 +8,16 @@ app.controller('MainController', ['$http', function($http){
     this.addForm = !this.addForm;
   }
 
+  $http({
+    url: '/session',
+    method: 'GET'
+  }).then(response => {
+    console.log(response.data);
+    this.user = response.data;
+  }, error => {
+    // console.log(error.message);
+  }).catch(err => console.log(err))
+
   // ========================
   // GET Route
   // ========================
@@ -49,13 +59,13 @@ app.controller('MainController', ['$http', function($http){
   this.createForm = {}
 
   this.processEditForm = (movie) => {
+    console.log(movie);
     $http({
       url: this.url + '/movies/' + movie.id,
       method: 'PUT',
       data: this.createForm
     }).then(response => {
-      const updateByIndex = this.movies.findIndex(movie => movie._id === movie.id)
-      this.movies.splice(updateByIndex, 1, response.data)
+      this.getMovies();
       this.createForm = {};
       this.editModal = false;
     }, error => {
@@ -72,8 +82,72 @@ app.controller('MainController', ['$http', function($http){
       url: this.url + '/movies/' + id,
       method: 'DELETE'
     }).then(response => {
-      const removeMovie = this.movies.findIndex(movie => movie._id === id);
-      this.movies.splice(removeMovie, 1);
+      this.getMovies();
+    }, error => {
+      console.log(error.message);
+    }).catch(err => console.log(err))
+  }
+
+  // ==============
+  // Login Route
+  // ==============
+
+  this.registerUser = (id) => {
+
+    const newUser = {
+      'email': `${this.newUserForm.username}@sample.com`,
+      'password': this.newUserForm.password
+    }
+
+    $http({
+      url: this.url + '/auth/',
+      method: 'POST',
+      data: newUser
+    }).then(response => {
+      this.user = response.data;
+      this.user.name = this.newUserForm.username;
+      this.newUserForm = {};
+      closeNav();
+    }, error => {
+      console.log(error.message);
+    }).catch(err => console.log(err))
+  }
+
+  this.logout = () => {
+    this.user = null;
+  }
+
+  // ==============
+  // Register Route
+  // ==============
+
+  this.loginUser = (id) => {
+
+    const user = {
+      'email': `${this.loginForm.username}@sample.com`,
+      'password': this.loginForm.password
+    }
+
+    $http({
+      url: this.url + '/auth/sign_in',
+      method: 'POST',
+      data: user
+    }).then(response => {
+      this.user = response.data;
+      this.user.name = this.loginForm.username;
+      this.loginForm = {};
+      closeNavLogin();
+
+      $http({
+        url: '/session',
+        method: 'POST',
+        data: this.user
+      }).then(response => {
+        console.log('turp');
+      }, error => {
+        console.log(error.message);
+      }).catch(err => console.log(err))
+
     }, error => {
       console.log(error.message);
     }).catch(err => console.log(err))

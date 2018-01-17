@@ -27,7 +27,7 @@ const sessionsController = require('./controllers/sessions.js')
 // USE OF CONTROLLERS
 // ==============
 
-// app.use('/session', sessionsController);
+app.use('/session', sessionsController);
 app.use('/movies', moviesController);
 
 // ==============
