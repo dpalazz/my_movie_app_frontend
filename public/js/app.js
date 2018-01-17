@@ -59,13 +59,13 @@ app.controller('MainController', ['$http', function($http){
   this.createForm = {}
 
   this.processEditForm = (movie) => {
+    console.log(movie);
     $http({
       url: this.url + '/movies/' + movie.id,
       method: 'PUT',
       data: this.createForm
     }).then(response => {
-      const updateByIndex = this.movies.findIndex(movie => movie._id === movie.id)
-      this.movies.splice(updateByIndex, 1, response.data)
+      this.getMovies();
       this.createForm = {};
       this.editModal = false;
     }, error => {
@@ -82,8 +82,7 @@ app.controller('MainController', ['$http', function($http){
       url: this.url + '/movies/' + id,
       method: 'DELETE'
     }).then(response => {
-      const removeMovie = this.movies.findIndex(movie => movie._id === id);
-      this.movies.splice(removeMovie, 1);
+      this.getMovies();
     }, error => {
       console.log(error.message);
     }).catch(err => console.log(err))
@@ -92,7 +91,7 @@ app.controller('MainController', ['$http', function($http){
   // ==============
   // Login Route
   // ==============
-  
+
   this.registerUser = (id) => {
 
     const newUser = {
@@ -117,7 +116,7 @@ app.controller('MainController', ['$http', function($http){
   this.logout = () => {
     this.user = null;
   }
-  
+
   // ==============
   // Register Route
   // ==============
