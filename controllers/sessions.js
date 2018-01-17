@@ -15,16 +15,15 @@ router.use(express.static('public'));
 // ==============
 
 router.get('/', (req, res) => {
-  console.log("test");
-  console.log(req.session.user);
+
   res.send(req.session.user);
 
  
 });
 
 router.post('/', (req, res) => {
-  console.log(req.body)
-  req.session.user = req.params.id;
+  req.session.user = req.body;
+  req.session.save()
 });
 
 
